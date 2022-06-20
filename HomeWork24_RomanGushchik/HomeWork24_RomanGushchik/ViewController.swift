@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Minsk&appid=2fbe78d61a988be7934bebfe2d3468ce") {
+        if let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Minsk&appid=2fbe78d61a988be7934bebfe2d3468ce&units=metric") {
             var urlRequest = URLRequest(url: url)
             // тип запроса
             urlRequest.httpMethod = "GET"
