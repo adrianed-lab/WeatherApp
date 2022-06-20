@@ -13,6 +13,7 @@
 		84448D322860843F004A82D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84448D302860843F004A82D6 /* Main.storyboard */; };
 		84448D3428608443004A82D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84448D3328608443004A82D6 /* Assets.xcassets */; };
 		84448D3728608443004A82D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84448D3528608443004A82D6 /* LaunchScreen.storyboard */; };
+		84448D3F28609644004A82D6 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448D3E28609644004A82D6 /* Weather.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		84448D3328608443004A82D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84448D3628608443004A82D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84448D3828608443004A82D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84448D3E28609644004A82D6 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				84448D2A2860843F004A82D6 /* AppDelegate.swift */,
 				84448D2C2860843F004A82D6 /* SceneDelegate.swift */,
 				84448D2E2860843F004A82D6 /* ViewController.swift */,
+				84448D3E28609644004A82D6 /* Weather.swift */,
 				84448D302860843F004A82D6 /* Main.storyboard */,
 				84448D3328608443004A82D6 /* Assets.xcassets */,
 				84448D3528608443004A82D6 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84448D3F28609644004A82D6 /* Weather.swift in Sources */,
 				84448D2F2860843F004A82D6 /* ViewController.swift in Sources */,
 				84448D2B2860843F004A82D6 /* AppDelegate.swift in Sources */,
 				84448D2D2860843F004A82D6 /* SceneDelegate.swift in Sources */,
