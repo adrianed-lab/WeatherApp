@@ -8,11 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var city = "Minsk"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let valueAPIKey = Bundle.main.infoDictionary!["API_KEY"] as! String
         
-        if let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Minsk&appid=2fbe78d61a988be7934bebfe2d3468ce&units=metric") {
+        if let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=\(valueAPIKey)&units=metric") {
             var urlRequest = URLRequest(url: url)
             // тип запроса
             urlRequest.httpMethod = "GET"
