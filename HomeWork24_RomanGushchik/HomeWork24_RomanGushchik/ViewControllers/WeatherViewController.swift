@@ -31,7 +31,18 @@
         }
         
     @IBAction func getWeatherButton(_ sender: Any) {
-        getCoordinateByCityName()
+        if cityNameTextField.hasText {
+            DispatchQueue.main.async {
+                self.getCoordinateByCityName()
+            }
+        }
+        else {
+            let alertMessage = UIAlertController(title: "Warning!", message: "Please, enter city name!", preferredStyle: .alert)
+            let okButton = UIAlertAction(title: "Ok", style: .cancel)
+            alertMessage.addAction(okButton)
+            present(alertMessage, animated: true)
+        }
+        
     }
         
     fileprivate func getCoordinateByCityName() {
