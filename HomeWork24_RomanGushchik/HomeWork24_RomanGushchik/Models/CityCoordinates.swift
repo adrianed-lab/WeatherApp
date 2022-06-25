@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetCityCoordinate: Codable {
+struct CityCoordinate: Codable {
     let cityName: String
     let latitude, longitude: Double
     let country: String
