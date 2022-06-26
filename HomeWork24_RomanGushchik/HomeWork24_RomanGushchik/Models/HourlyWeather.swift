@@ -7,21 +7,6 @@
 
 import Foundation
 
-struct HourlyWeather: Codable {
-    let latitude, longitude: Double
-    let timezone: String
-    let timezoneOffset: Int
-    let hourly: [Hourly]
-
-    enum CodingKeys: String, CodingKey {
-        case latitude = "lat"
-        case longitude = "lon"
-        case timezone
-        case timezoneOffset = "timezone_offset"
-        case hourly
-    }
-}
-
 struct Hourly: Codable {
     let dateTime: Int
     let temperature, feelsLike: Double
@@ -32,7 +17,7 @@ struct Hourly: Codable {
     let windDeg: Int
     let windGust: Double
     let weather: [WeatherForHours]
-    let pop: Int
+    let pop: Double
 
     enum CodingKeys: String, CodingKey {
         case dateTime = "dt"
@@ -50,8 +35,8 @@ struct Hourly: Codable {
 
 struct WeatherForHours: Codable {
     let id: Int
-    let main: Main
-    let weatherDescription: Description
+    let main: String
+    let weatherDescription: String
     let icon: String
 
     enum CodingKeys: String, CodingKey {
@@ -61,16 +46,5 @@ struct WeatherForHours: Codable {
     }
 }
 
-enum Main: String, Codable {
-    case clear = "Clear"
-    case clouds = "Clouds"
-}
 
-enum Description: String, Codable {
-    case brokenClouds = "broken clouds"
-    case clearSky = "clear sky"
-    case fewClouds = "few clouds"
-    case overcastClouds = "overcast clouds"
-    case scatteredClouds = "scattered clouds"
-}
 

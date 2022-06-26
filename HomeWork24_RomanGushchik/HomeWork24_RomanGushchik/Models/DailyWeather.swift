@@ -7,19 +7,6 @@
 
 import Foundation
 
-struct DailyWeather: Codable {
-    let lat, lon: Double
-    let timezone: String
-    let timezoneOffset: Int
-    let daily: [Daily]
-
-    enum CodingKeys: String, CodingKey {
-        case lat, lon, timezone
-        case timezoneOffset = "timezone_offset"
-        case daily
-    }
-}
-
 struct Daily: Codable {
     let dateTime, sunrise, sunset, moonrise: Int
     let moonset: Int

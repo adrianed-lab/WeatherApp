@@ -28,17 +28,6 @@
         super.viewDidLoad()
         apiProvider = AlamofireAPIProvider()
         enterCityName.text = "Enter city name"
-        temperature.text = ""
-        feelsLike.text = ""
-        pressure.text  = ""
-        humidity.text = ""
-        visibility.text = ""
-        windSpeed.text = ""
-        windGust.text = ""
-        sunrise.text = ""
-        sunset.text = ""
-        clouds.text = ""
-
         }
         
     @IBAction func getWeatherButton(_ sender: Any) {
