@@ -74,6 +74,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnD-Nm-Kkd">
                                         <rect key="frame" x="0.0" y="395.5" width="382" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -109,9 +110,9 @@
                             <constraint firstItem="Wm2-xJ-cVc" firstAttribute="top" secondItem="1NR-Yu-UGP" secondAttribute="bottom" constant="8" id="3pM-si-PvQ"/>
                             <constraint firstItem="oGa-vD-XBg" firstAttribute="top" secondItem="egd-6i-FGW" secondAttribute="bottom" constant="8" id="64R-TC-rar"/>
                             <constraint firstItem="egd-6i-FGW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="BtX-bQ-LCf"/>
+                            <constraint firstItem="egd-6i-FGW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="123" id="Ixg-NT-OKU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wm2-xJ-cVc" secondAttribute="trailing" constant="16" id="L32-NP-xro"/>
                             <constraint firstItem="1NR-Yu-UGP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="MM3-X7-FZr"/>
-                            <constraint firstItem="egd-6i-FGW" firstAttribute="top" secondItem="Wm2-xJ-cVc" secondAttribute="bottom" constant="10" id="Nqk-TT-eAf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oGa-vD-XBg" secondAttribute="bottom" id="Rtq-CF-4Mu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oGa-vD-XBg" secondAttribute="trailing" constant="16" id="UZb-Vj-IEf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QVv-2u-G2I" secondAttribute="trailing" constant="16" id="bLE-Kn-b67"/>

@@ -22,7 +22,6 @@
         @IBOutlet weak var sunset: UILabel!
         @IBOutlet weak var windGust: UILabel!
         @IBOutlet weak var imageWeather: UIImageView!
-        var image: UIImage!
         private var apiProvider: RestAPIProviderProtocol!
 
         override func viewDidLoad() {
@@ -87,11 +86,11 @@
                     self.sunrise.text = "Sunrise: \(value.current.sunrise)"
                     self.sunset.text = "Sunset: \(value.current.sunset)"
                     self.clouds.text = "Clouds: \(value.current.clouds)"
-                         
-                   // let imageUrl = URL(string: "http://openweathermap.org/img/wn/\(value.current.weather.first?.icon ?? "4d")@2x.png")
-                   // let imageData = try! Data(contentsOf: imageUrl!)
-                  //  let image = UIImage(data: imageData)
-                  //  self.imageWeather.image = image
+                    guard let imageWeatherIcon = value.current.weather.first?.icon else {return}
+                    guard let imageUrl = URL(string: "https://openweathermap.org/img/wn/\(imageWeatherIcon)@2x.png") else {return}
+                    if let imageData = try? Data(contentsOf: imageUrl) {
+                    self.imageWeather.image = UIImage(data: imageData)
+                    }
                 }
                 case .failure(let error):
                          print(error)
