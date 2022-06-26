@@ -21,12 +21,24 @@
         @IBOutlet weak var sunrise: UILabel!
         @IBOutlet weak var sunset: UILabel!
         @IBOutlet weak var windGust: UILabel!
+        @IBOutlet weak var imageWeather: UIImageView!
+        var image: UIImage!
         private var apiProvider: RestAPIProviderProtocol!
 
         override func viewDidLoad() {
         super.viewDidLoad()
         apiProvider = AlamofireAPIProvider()
         enterCityName.text = "Enter city name"
+        temperature.text = ""
+        feelsLike.text = ""
+        pressure.text  = ""
+        humidity.text = ""
+        visibility.text = ""
+        windSpeed.text = ""
+        windGust.text = ""
+        sunrise.text = ""
+        sunset.text = ""
+        clouds.text = ""
 
         }
         
@@ -75,7 +87,12 @@
                     self.sunrise.text = "Sunrise: \(value.current.sunrise)"
                     self.sunset.text = "Sunset: \(value.current.sunset)"
                     self.clouds.text = "Clouds: \(value.current.clouds)"
-                         }
+                         
+                   // let imageUrl = URL(string: "http://openweathermap.org/img/wn/\(value.current.weather.first?.icon ?? "4d")@2x.png")
+                   // let imageData = try! Data(contentsOf: imageUrl!)
+                  //  let image = UIImage(data: imageData)
+                  //  self.imageWeather.image = image
+                }
                 case .failure(let error):
                          print(error)
             }
