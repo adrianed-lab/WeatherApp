@@ -23,11 +23,15 @@
         @IBOutlet weak var windGust: UILabel!
         @IBOutlet weak var imageWeather: UIImageView!
         private var apiProvider: RestAPIProviderProtocol!
+        static let key = "WeatherViewController"
 
         override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Weather"
         apiProvider = AlamofireAPIProvider()
-        enterCityName.text = "Enter city name"
+            
+       // enterCityName.text = "Enter city name"
+           
         }
         
     @IBAction func getWeatherButton(_ sender: Any) {
