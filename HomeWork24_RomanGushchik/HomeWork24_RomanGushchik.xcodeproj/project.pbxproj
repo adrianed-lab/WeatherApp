@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		207BFCFD8DDEEC5161B76F74 /* Pods_HomeWork24_RomanGushchik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7501A9A23AE05325410EE341 /* Pods_HomeWork24_RomanGushchik.framework */; };
+		8417D8AC286DA5A300B11A56 /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417D8AA286DA5A300B11A56 /* HourlyCollectionViewCell.swift */; };
+		8417D8AD286DA5A300B11A56 /* HourlyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8417D8AB286DA5A300B11A56 /* HourlyCollectionViewCell.xib */; };
 		841E087B28694E30003DB2F4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E087A28694E30003DB2F4 /* MapViewController.swift */; };
 		841E087E28695167003DB2F4 /* MapStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841E087D28695167003DB2F4 /* MapStoryboard.storyboard */; };
 		841E088028696469003DB2F4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E087F28696469003DB2F4 /* TabBarViewController.swift */; };
@@ -34,6 +36,8 @@
 		366A07FE00FD6CB24DF8DC2C /* Pods-HomeWork24_RomanGushchik.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork24_RomanGushchik.debug.xcconfig"; path = "Target Support Files/Pods-HomeWork24_RomanGushchik/Pods-HomeWork24_RomanGushchik.debug.xcconfig"; sourceTree = "<group>"; };
 		3DD021739B30B328D6334D6E /* Pods-HomeWork24_RomanGushchik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork24_RomanGushchik.release.xcconfig"; path = "Target Support Files/Pods-HomeWork24_RomanGushchik/Pods-HomeWork24_RomanGushchik.release.xcconfig"; sourceTree = "<group>"; };
 		7501A9A23AE05325410EE341 /* Pods_HomeWork24_RomanGushchik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeWork24_RomanGushchik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8417D8AA286DA5A300B11A56 /* HourlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionViewCell.swift; sourceTree = "<group>"; };
+		8417D8AB286DA5A300B11A56 /* HourlyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyCollectionViewCell.xib; sourceTree = "<group>"; };
 		841E087A28694E30003DB2F4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		841E087D28695167003DB2F4 /* MapStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryboard.storyboard; sourceTree = "<group>"; };
 		841E087F28696469003DB2F4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8417D8AE286DA5A800B11A56 /* WeatherCollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				8417D8AA286DA5A300B11A56 /* HourlyCollectionViewCell.swift */,
+				8417D8AB286DA5A300B11A56 /* HourlyCollectionViewCell.xib */,
+			);
+			path = WeatherCollectionViewCells;
+			sourceTree = "<group>";
+		};
 		841E087C28694E72003DB2F4 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +133,7 @@
 				84448D2A2860843F004A82D6 /* AppDelegate.swift */,
 				84448D2C2860843F004A82D6 /* SceneDelegate.swift */,
 				84448D7028673966004A82D6 /* Constants.swift */,
+				8417D8AE286DA5A800B11A56 /* WeatherCollectionViewCells */,
 				84B02334286D4BDC0099B7DC /* WeatherTableViewCells */,
 				84448D76286751B6004A82D6 /* ViewControllers */,
 				84448D7528673A1C004A82D6 /* APIProviders */,
@@ -258,6 +272,7 @@
 				84B02338286D4C790099B7DC /* HourlyTableViewCell.xib in Resources */,
 				84448D3428608443004A82D6 /* Assets.xcassets in Resources */,
 				841E087E28695167003DB2F4 /* MapStoryboard.storyboard in Resources */,
+				8417D8AD286DA5A300B11A56 /* HourlyCollectionViewCell.xib in Resources */,
 				84448D322860843F004A82D6 /* Main.storyboard in Resources */,
 				84B0233E286D4CD10099B7DC /* DailyTableViewCell.xib in Resources */,
 			);
@@ -319,6 +334,7 @@
 				841E087B28694E30003DB2F4 /* MapViewController.swift in Sources */,
 				84448D2F2860843F004A82D6 /* WeatherViewController.swift in Sources */,
 				84448D74286739F3004A82D6 /* AlamofireAPIProvider.swift in Sources */,
+				8417D8AC286DA5A300B11A56 /* HourlyCollectionViewCell.swift in Sources */,
 				84448D4328648918004A82D6 /* HourlyWeather.swift in Sources */,
 				84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */,
 				84448D2B2860843F004A82D6 /* AppDelegate.swift in Sources */,

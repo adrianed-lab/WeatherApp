@@ -9,51 +9,31 @@
 
     class WeatherViewController: UIViewController {
         
-        @IBOutlet weak var enterCityName: UILabel!
-        @IBOutlet weak var cityNameTextField: UITextField!
-        @IBOutlet weak var temperature: UILabel!
-        @IBOutlet weak var feelsLike: UILabel!
-        @IBOutlet weak var pressure: UILabel!
-        @IBOutlet weak var humidity: UILabel!
-        @IBOutlet weak var visibility: UILabel!
-        @IBOutlet weak var clouds: UILabel!
-        @IBOutlet weak var windSpeed: UILabel!
-        @IBOutlet weak var sunrise: UILabel!
-        @IBOutlet weak var sunset: UILabel!
-        @IBOutlet weak var windGust: UILabel!
-        @IBOutlet weak var imageWeather: UIImageView!
+        @IBOutlet var myTableView: UITableView!
+        var models = [Daily]()
+        var hourlyModels = [Hourly]()
+        var currentWeather: Current!
+        var currentLocation: [CityCoordinate]!
         private var apiProvider: RestAPIProviderProtocol!
         static let key = "WeatherViewController"
-
+        
         override func viewDidLoad() {
         super.viewDidLoad()
         title = "Weather"
         apiProvider = AlamofireAPIProvider()
+        myTableView.delegate = self
+        myTableView.dataSource = self
+        myTableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: HourlyTableViewCell.key)
+        myTableView.register(UINib(nibName: "DailyTableViewCell", bundle: nil), forCellReuseIdentifier: DailyTableViewCell.key)
+            getCoordinateByCityName()
             
-       // enterCityName.text = "Enter city name"
            
         }
-        
-    @IBAction func getWeatherButton(_ sender: Any) {
-        if cityNameTextField.hasText {
-            DispatchQueue.main.async {
-                self.getCoordinateByCityName()
-            }
-        }
-        else {
-            let alertMessage = UIAlertController(title: "Warning!", message: "Please, enter city name!", preferredStyle: .alert)
-            let okButton = UIAlertAction(title: "Ok", style: .cancel)
-            alertMessage.addAction(okButton)
-            present(alertMessage, animated: true)
-        }
-        
-    }
-        
     fileprivate func getCoordinateByCityName() {
-        guard let cityName = cityNameTextField.text else {return}
-            apiProvider.getCoordinateByCityName(cityName: cityName) { result in
+            apiProvider.getCoordinateByCityName(cityName: "Minsk") { result in
             switch result {
                 case .success(let value):
+                self.currentLocation = value
                 if let city = value.first {
                     self.getWeatherByCoordinate(city: city)
                     }
@@ -64,32 +44,79 @@
     }
 
     private func getWeatherByCoordinate(city: CityCoordinate) {
-        apiProvider.getWeatherByCityCoordinate(latitude: city.latitude, longitude: city.longitude) { [weak self] result in
-            guard let self = self else {return}
+        apiProvider.getWeatherByCityCoordinate(latitude: city.latitude, longitude: city.longitude) { result in
             switch result {
-                case .success(let value):
+              case .success(let value):
+                self.models.append(contentsOf: value.dailyWeather)
+                self.hourlyModels = value.hourlyWeather
+                //let current = value.current
+                self.currentWeather = value.current
                 DispatchQueue.main.async {
-                    self.temperature.text = "Temperature: \(value.current.temperature)"
-                    self.feelsLike.text = "FeelLike: \(value.current.feelsLike)"
-                    self.pressure.text  = "Pressure: \(value.current.pressure)"
-                    self.humidity.text = "Humidity: \(value.current.humidity)"
-                    self.visibility.text = "Visibility: \(value.current.visibility)"
-                    self.windSpeed.text = "WindSpeed: \(value.current.windSpeed)"
-                    self.windGust.text = "WindGust: \(value.current.windGust)"
-                    self.sunrise.text = "Sunrise: \(value.current.sunrise)"
-                    self.sunset.text = "Sunset: \(value.current.sunset)"
-                    self.clouds.text = "Clouds: \(value.current.clouds)"
-                    guard let imageWeatherIcon = value.current.weather.first?.icon else {return}
-                    guard let imageUrl = URL(string: "https://openweathermap.org/img/wn/\(imageWeatherIcon)@2x.png") else {return}
-                    if let imageData = try? Data(contentsOf: imageUrl) {
-                    self.imageWeather.image = UIImage(data: imageData)
-                    }
+                    self.myTableView.reloadData()
+                    self.myTableView.tableHeaderView = self.createTableHeader()
                 }
-                case .failure(let error):
-                         print(error)
-            }
+             
+              case .failure(let error):
+                        print(error)
+                }
         }
     }
+        func createTableHeader() -> UIView {
+            let tableHeader = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width))
+            tableHeader.backgroundColor = .red
+            let currentLocationLabel = UILabel(frame: CGRect(x: 10, y: 10, width: view.frame.size.width, height: tableHeader.frame.size.height/5))
+            let tempLabel = UILabel(frame: CGRect(x: 10, y: 20 + currentLocationLabel.frame.size.height, width: view.frame.size.width, height: tableHeader.frame.size.height/2))
+            let weatherDiscription = UILabel(frame: CGRect(x: 10, y: 20 + currentLocationLabel.frame.size.height + tempLabel.frame.size.height, width: view.frame.size.width, height: tableHeader.frame.size.height/5))
+            currentLocationLabel.textAlignment = .center
+            tempLabel.textAlignment = .center
+            weatherDiscription.textAlignment = .center
+            tempLabel.font = UIFont(name: "Helvetica-Bold", size: 32)
+            tableHeader.addSubview(currentLocationLabel)
+            tableHeader.addSubview(tempLabel)
+            tableHeader.addSubview(weatherDiscription)
+            
+            tempLabel.text = "\(currentWeather.temperature)°"
+            guard let weather = currentWeather.weather.first?.weatherDescription, let cityName = currentLocation.first?.cityName else {
+                return UIView()
+            }
+            weatherDiscription.text = "\(weather)"
+            currentLocationLabel.text = cityName
+            
+            return tableHeader
+        }
+        
+        
+}
+
+extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
+         return models.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+        let cell = tableView.dequeueReusableCell(withIdentifier: HourlyTableViewCell.key, for: indexPath) as! HourlyTableViewCell
+            cell.configure(with: hourlyModels)
+            return cell
+        }
+    
+        let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.key, for: indexPath) as! DailyTableViewCell
+            cell.configure(model: models[indexPath.row])
+            return cell
+
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        100
+        
+    }
+    
+    
 }
 
 
