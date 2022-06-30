@@ -84,8 +84,6 @@
             
             return tableHeader
         }
-        
-        
 }
 
 extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
@@ -105,7 +103,6 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configure(with: hourlyModels)
             return cell
         }
-    
         let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.key, for: indexPath) as! DailyTableViewCell
             cell.configure(model: models[indexPath.row])
             return cell
@@ -113,10 +110,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
-        
     }
-    
-    
 }
 
 

@@ -12,6 +12,7 @@ class DailyTableViewCell: UITableViewCell {
     @IBOutlet var lowTempLabel: UILabel!
     @IBOutlet var hightTempLebl: UILabel!
     @IBOutlet var iconWeatherImage: UIImageView!
+    
 
     
     static let key = "DailyTableViewCell"
@@ -28,22 +29,13 @@ class DailyTableViewCell: UITableViewCell {
     func configure(model: Daily) {
         self.lowTempLabel.text = "\(model.temperature.min)°"
         self.hightTempLebl.text = "\(model.temperature.max)°"
-        self.dayLabel.text = getDayForDate(Date(timeIntervalSince1970: Double(model.dateTime)))
+        let date = Date()
+        self.dayLabel.text = date.getDayForDate(Date(timeIntervalSince1970: Double(model.dateTime)))
         guard let iconImage = model.weather.first?.icon else {return}
         guard let imageUrl = URL(string: "https://openweathermap.org/img/wn/\(iconImage)@2x.png") else {return}
         if let data = try? Data(contentsOf: imageUrl) {
             self.iconWeatherImage.image = UIImage(data: data)
         }
     }
-    func getDayForDate(_ date: Date?) -> String {
-        guard let inputDate = date else {
-            return ""
-        }
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "d MMM, yyyy" // Monday
-        return formatter.string(from: inputDate)
-    }
-    
     
 }
