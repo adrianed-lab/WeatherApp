@@ -14,8 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let valueApiKey = Bundle.main.infoDictionary?["API_KEY_GoogleMaps"] as? String
-        if let valueApiKey = valueApiKey {GMSServices.provideAPIKey(valueApiKey)}
+        if let valueApiKey = Bundle.main.infoDictionary?["API_KEY_GoogleMaps"] as? String {
+         GMSServices.provideAPIKey(valueApiKey)
+        }
         return true
     }
 

@@ -10,7 +10,7 @@
 		207BFCFD8DDEEC5161B76F74 /* Pods_HomeWork24_RomanGushchik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7501A9A23AE05325410EE341 /* Pods_HomeWork24_RomanGushchik.framework */; };
 		8417D8AC286DA5A300B11A56 /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417D8AA286DA5A300B11A56 /* HourlyCollectionViewCell.swift */; };
 		8417D8AD286DA5A300B11A56 /* HourlyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8417D8AB286DA5A300B11A56 /* HourlyCollectionViewCell.xib */; };
-		8417D8B0286DF99D00B11A56 /* Extansion+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417D8AF286DF99D00B11A56 /* Extansion+Date.swift */; };
+		8417D8B0286DF99D00B11A56 /* Date+Extansion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417D8AF286DF99D00B11A56 /* Date+Extansion.swift */; };
 		841E087B28694E30003DB2F4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E087A28694E30003DB2F4 /* MapViewController.swift */; };
 		841E087E28695167003DB2F4 /* MapStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841E087D28695167003DB2F4 /* MapStoryboard.storyboard */; };
 		841E088028696469003DB2F4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E087F28696469003DB2F4 /* TabBarViewController.swift */; };
@@ -31,6 +31,9 @@
 		84B02338286D4C790099B7DC /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */; };
 		84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */; };
 		84B0233E286D4CD10099B7DC /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B0233C286D4CD10099B7DC /* DailyTableViewCell.xib */; };
+		84E6055B286F66280055EC1C /* HourlyTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055A286F66280055EC1C /* HourlyTableViewCell+Extension.swift */; };
+		84E6055D286F66830055EC1C /* WeatherViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */; };
+		84E6055F286F66C70055EC1C /* MapViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +42,7 @@
 		7501A9A23AE05325410EE341 /* Pods_HomeWork24_RomanGushchik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeWork24_RomanGushchik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8417D8AA286DA5A300B11A56 /* HourlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionViewCell.swift; sourceTree = "<group>"; };
 		8417D8AB286DA5A300B11A56 /* HourlyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyCollectionViewCell.xib; sourceTree = "<group>"; };
-		8417D8AF286DF99D00B11A56 /* Extansion+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extansion+Date.swift"; sourceTree = "<group>"; };
+		8417D8AF286DF99D00B11A56 /* Date+Extansion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extansion.swift"; sourceTree = "<group>"; };
 		841E087A28694E30003DB2F4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		841E087D28695167003DB2F4 /* MapStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryboard.storyboard; sourceTree = "<group>"; };
 		841E087F28696469003DB2F4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +64,9 @@
 		84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
 		84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		84B0233C286D4CD10099B7DC /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
+		84E6055A286F66280055EC1C /* HourlyTableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HourlyTableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherViewController+Extension.swift"; sourceTree = "<group>"; };
+		84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +111,10 @@
 		8417D8B1286DFA6B00B11A56 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8417D8AF286DF99D00B11A56 /* Extansion+Date.swift */,
+				8417D8AF286DF99D00B11A56 /* Date+Extansion.swift */,
+				84E6055A286F66280055EC1C /* HourlyTableViewCell+Extension.swift */,
+				84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */,
+				84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -344,12 +353,15 @@
 				84448D3F28609644004A82D6 /* CurrentWeather.swift in Sources */,
 				841E087B28694E30003DB2F4 /* MapViewController.swift in Sources */,
 				84448D2F2860843F004A82D6 /* WeatherViewController.swift in Sources */,
-				8417D8B0286DF99D00B11A56 /* Extansion+Date.swift in Sources */,
+				8417D8B0286DF99D00B11A56 /* Date+Extansion.swift in Sources */,
 				84448D74286739F3004A82D6 /* AlamofireAPIProvider.swift in Sources */,
 				8417D8AC286DA5A300B11A56 /* HourlyCollectionViewCell.swift in Sources */,
+				84E6055D286F66830055EC1C /* WeatherViewController+Extension.swift in Sources */,
 				84448D4328648918004A82D6 /* HourlyWeather.swift in Sources */,
+				84E6055F286F66C70055EC1C /* MapViewController+Extension.swift in Sources */,
 				84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */,
 				84448D2B2860843F004A82D6 /* AppDelegate.swift in Sources */,
+				84E6055B286F66280055EC1C /* HourlyTableViewCell+Extension.swift in Sources */,
 				84448D2D2860843F004A82D6 /* SceneDelegate.swift in Sources */,
 				84B02337286D4C790099B7DC /* HourlyTableViewCell.swift in Sources */,
 				84448D7128673967004A82D6 /* Constants.swift in Sources */,
