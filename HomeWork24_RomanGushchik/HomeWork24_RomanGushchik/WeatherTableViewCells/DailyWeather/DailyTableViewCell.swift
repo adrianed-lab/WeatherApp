@@ -12,9 +12,6 @@ class DailyTableViewCell: UITableViewCell {
     @IBOutlet var lowTempLabel: UILabel!
     @IBOutlet var hightTempLebl: UILabel!
     @IBOutlet var iconWeatherImage: UIImageView!
-    
-
-    
     static let key = "DailyTableViewCell"
     
     override func awakeFromNib() {
@@ -32,10 +29,9 @@ class DailyTableViewCell: UITableViewCell {
         let date = Date()
         self.dayLabel.text = date.getDayForDate(Date(timeIntervalSince1970: Double(model.dateTime)))
         guard let iconImage = model.weather.first?.icon else {return}
-        guard let imageUrl = URL(string: "https://openweathermap.org/img/wn/\(iconImage)@2x.png") else {return}
+        guard let imageUrl = URL(string: "\(Constants.baseURLForWeatherImage)\(iconImage)\(Constants.weatherImageIconURLPrefix)") else {return}
         if let data = try? Data(contentsOf: imageUrl) {
             self.iconWeatherImage.image = UIImage(data: data)
         }
     }
-    
 }

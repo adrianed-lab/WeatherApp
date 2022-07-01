@@ -25,10 +25,9 @@
         myTableView.dataSource = self
         myTableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: HourlyTableViewCell.key)
         myTableView.register(UINib(nibName: "DailyTableViewCell", bundle: nil), forCellReuseIdentifier: DailyTableViewCell.key)
-            getCoordinateByCityName()
-            
-           
+        getCoordinateByCityName()
         }
+        
     fileprivate func getCoordinateByCityName() {
             apiProvider.getCoordinateByCityName(cityName: "Minsk") { result in
             switch result {
@@ -48,16 +47,14 @@
             switch result {
               case .success(let value):
                 self.models.append(contentsOf: value.dailyWeather)
-                self.hourlyModels = value.hourlyWeather
-                //let current = value.current
                 self.currentWeather = value.current
+                self.hourlyModels = value.hourlyWeather
                 DispatchQueue.main.async {
                     self.myTableView.reloadData()
                     self.myTableView.tableHeaderView = self.createTableHeader()
                 }
-             
               case .failure(let error):
-                        print(error)
+                    print(error)
                 }
         }
     }
@@ -74,7 +71,6 @@
             tableHeader.addSubview(currentLocationLabel)
             tableHeader.addSubview(tempLabel)
             tableHeader.addSubview(weatherDiscription)
-            
             tempLabel.text = "\(currentWeather.temperature)°"
             guard let weather = currentWeather.weather.first?.weatherDescription, let cityName = currentLocation.first?.cityName else {
                 return UIView()
@@ -85,33 +81,3 @@
             return tableHeader
         }
 }
-
-extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        2
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        }
-         return models.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HourlyTableViewCell.key, for: indexPath) as! HourlyTableViewCell
-            cell.configure(with: hourlyModels)
-            return cell
-        }
-        let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.key, for: indexPath) as! DailyTableViewCell
-            cell.configure(model: models[indexPath.row])
-            return cell
-
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
-    }
-}
-
-
-
