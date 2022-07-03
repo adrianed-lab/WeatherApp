@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		205072582871CD9000B01E93 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205072572871CD9000B01E93 /* UIImageView+Extension.swift */; };
+		207BFCFD8DDEEC5161B76F74 /* Pods_HomeWork24_RomanGushchik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7501A9A23AE05325410EE341 /* Pods_HomeWork24_RomanGushchik.framework */; };
+		8417D8AC286DA5A300B11A56 /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417D8AA286DA5A300B11A56 /* HourlyCollectionViewCell.swift */; };
+		8417D8AD286DA5A300B11A56 /* HourlyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8417D8AB286DA5A300B11A56 /* HourlyCollectionViewCell.xib */; };
+		8417D8B0286DF99D00B11A56 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417D8AF286DF99D00B11A56 /* Int+Extension.swift */; };
+		841E087B28694E30003DB2F4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E087A28694E30003DB2F4 /* MapViewController.swift */; };
+		841E087E28695167003DB2F4 /* MapStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841E087D28695167003DB2F4 /* MapStoryboard.storyboard */; };
+		841E088028696469003DB2F4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E087F28696469003DB2F4 /* TabBarViewController.swift */; };
 		84448D2B2860843F004A82D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448D2A2860843F004A82D6 /* AppDelegate.swift */; };
 		84448D2D2860843F004A82D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448D2C2860843F004A82D6 /* SceneDelegate.swift */; };
 		84448D2F2860843F004A82D6 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448D2E2860843F004A82D6 /* WeatherViewController.swift */; };
@@ -20,9 +28,26 @@
 		84448D6F286738C0004A82D6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 84448D6E286738C0004A82D6 /* Alamofire */; };
 		84448D7128673967004A82D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448D7028673966004A82D6 /* Constants.swift */; };
 		84448D74286739F3004A82D6 /* AlamofireAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448D73286739F3004A82D6 /* AlamofireAPIProvider.swift */; };
+		84B02337286D4C790099B7DC /* HourlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B02335286D4C790099B7DC /* HourlyTableViewCell.swift */; };
+		84B02338286D4C790099B7DC /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */; };
+		84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */; };
+		84B0233E286D4CD10099B7DC /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B0233C286D4CD10099B7DC /* DailyTableViewCell.xib */; };
+		84E6055B286F66280055EC1C /* HourlyTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055A286F66280055EC1C /* HourlyTableViewCell+Extension.swift */; };
+		84E6055D286F66830055EC1C /* WeatherViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */; };
+		84E6055F286F66C70055EC1C /* MapViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		205072572871CD9000B01E93 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		366A07FE00FD6CB24DF8DC2C /* Pods-HomeWork24_RomanGushchik.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork24_RomanGushchik.debug.xcconfig"; path = "Target Support Files/Pods-HomeWork24_RomanGushchik/Pods-HomeWork24_RomanGushchik.debug.xcconfig"; sourceTree = "<group>"; };
+		3DD021739B30B328D6334D6E /* Pods-HomeWork24_RomanGushchik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeWork24_RomanGushchik.release.xcconfig"; path = "Target Support Files/Pods-HomeWork24_RomanGushchik/Pods-HomeWork24_RomanGushchik.release.xcconfig"; sourceTree = "<group>"; };
+		7501A9A23AE05325410EE341 /* Pods_HomeWork24_RomanGushchik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HomeWork24_RomanGushchik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8417D8AA286DA5A300B11A56 /* HourlyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCollectionViewCell.swift; sourceTree = "<group>"; };
+		8417D8AB286DA5A300B11A56 /* HourlyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyCollectionViewCell.xib; sourceTree = "<group>"; };
+		8417D8AF286DF99D00B11A56 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		841E087A28694E30003DB2F4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		841E087D28695167003DB2F4 /* MapStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryboard.storyboard; sourceTree = "<group>"; };
+		841E087F28696469003DB2F4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		84448D272860843F004A82D6 /* HomeWork24_RomanGushchik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork24_RomanGushchik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84448D2A2860843F004A82D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84448D2C2860843F004A82D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +62,13 @@
 		84448D4428648EB2004A82D6 /* DailyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeather.swift; sourceTree = "<group>"; };
 		84448D7028673966004A82D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84448D73286739F3004A82D6 /* AlamofireAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAPIProvider.swift; sourceTree = "<group>"; };
+		84B02335286D4C790099B7DC /* HourlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTableViewCell.swift; sourceTree = "<group>"; };
+		84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
+		84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
+		84B0233C286D4CD10099B7DC /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
+		84E6055A286F66280055EC1C /* HourlyTableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HourlyTableViewCell+Extension.swift"; sourceTree = "<group>"; };
+		84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherViewController+Extension.swift"; sourceTree = "<group>"; };
+		84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +77,67 @@
 			buildActionMask = 2147483647;
 			files = (
 				84448D6F286738C0004A82D6 /* Alamofire in Frameworks */,
+				207BFCFD8DDEEC5161B76F74 /* Pods_HomeWork24_RomanGushchik.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FA8847B3996A6E0802B053C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7501A9A23AE05325410EE341 /* Pods_HomeWork24_RomanGushchik.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		73431BE50296363EA7538F1B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				366A07FE00FD6CB24DF8DC2C /* Pods-HomeWork24_RomanGushchik.debug.xcconfig */,
+				3DD021739B30B328D6334D6E /* Pods-HomeWork24_RomanGushchik.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8417D8AE286DA5A800B11A56 /* WeatherCollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				8417D8AA286DA5A300B11A56 /* HourlyCollectionViewCell.swift */,
+				8417D8AB286DA5A300B11A56 /* HourlyCollectionViewCell.xib */,
+			);
+			path = WeatherCollectionViewCells;
+			sourceTree = "<group>";
+		};
+		8417D8B1286DFA6B00B11A56 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8417D8AF286DF99D00B11A56 /* Int+Extension.swift */,
+				84E6055A286F66280055EC1C /* HourlyTableViewCell+Extension.swift */,
+				84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */,
+				84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */,
+				205072572871CD9000B01E93 /* UIImageView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		841E087C28694E72003DB2F4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				84448D302860843F004A82D6 /* Main.storyboard */,
+				841E087D28695167003DB2F4 /* MapStoryboard.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		84448D1E2860843F004A82D6 = {
 			isa = PBXGroup;
 			children = (
 				84448D292860843F004A82D6 /* HomeWork24_RomanGushchik */,
 				84448D282860843F004A82D6 /* Products */,
+				73431BE50296363EA7538F1B /* Pods */,
+				1FA8847B3996A6E0802B053C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,10 +155,13 @@
 				84448D2A2860843F004A82D6 /* AppDelegate.swift */,
 				84448D2C2860843F004A82D6 /* SceneDelegate.swift */,
 				84448D7028673966004A82D6 /* Constants.swift */,
+				8417D8B1286DFA6B00B11A56 /* Extensions */,
+				8417D8AE286DA5A800B11A56 /* WeatherCollectionViewCells */,
+				84B02334286D4BDC0099B7DC /* WeatherTableViewCells */,
 				84448D76286751B6004A82D6 /* ViewControllers */,
 				84448D7528673A1C004A82D6 /* APIProviders */,
 				84448D6C286737C2004A82D6 /* Models */,
-				84448D302860843F004A82D6 /* Main.storyboard */,
+				841E087C28694E72003DB2F4 /* Storyboards */,
 				84448D3328608443004A82D6 /* Assets.xcassets */,
 				84448D3528608443004A82D6 /* LaunchScreen.storyboard */,
 				84448D3828608443004A82D6 /* Info.plist */,
@@ -106,9 +191,38 @@
 		84448D76286751B6004A82D6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				841E087F28696469003DB2F4 /* TabBarViewController.swift */,
 				84448D2E2860843F004A82D6 /* WeatherViewController.swift */,
+				841E087A28694E30003DB2F4 /* MapViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		84B02334286D4BDC0099B7DC /* WeatherTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				84B02339286D4C7F0099B7DC /* HourlyWeather */,
+				84B0233A286D4CA80099B7DC /* DailyWeather */,
+			);
+			path = WeatherTableViewCells;
+			sourceTree = "<group>";
+		};
+		84B02339286D4C7F0099B7DC /* HourlyWeather */ = {
+			isa = PBXGroup;
+			children = (
+				84B02335286D4C790099B7DC /* HourlyTableViewCell.swift */,
+				84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */,
+			);
+			path = HourlyWeather;
+			sourceTree = "<group>";
+		};
+		84B0233A286D4CA80099B7DC /* DailyWeather */ = {
+			isa = PBXGroup;
+			children = (
+				84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */,
+				84B0233C286D4CD10099B7DC /* DailyTableViewCell.xib */,
+			);
+			path = DailyWeather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,9 +232,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84448D3B28608443004A82D6 /* Build configuration list for PBXNativeTarget "HomeWork24_RomanGushchik" */;
 			buildPhases = (
+				728D100BE091CFF339E0D4DE /* [CP] Check Pods Manifest.lock */,
 				84448D232860843F004A82D6 /* Sources */,
 				84448D242860843F004A82D6 /* Frameworks */,
 				84448D252860843F004A82D6 /* Resources */,
+				2FEAB3DD2FECCFFA2F148B40 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,12 +292,58 @@
 			buildActionMask = 2147483647;
 			files = (
 				84448D3728608443004A82D6 /* LaunchScreen.storyboard in Resources */,
+				84B02338286D4C790099B7DC /* HourlyTableViewCell.xib in Resources */,
 				84448D3428608443004A82D6 /* Assets.xcassets in Resources */,
+				841E087E28695167003DB2F4 /* MapStoryboard.storyboard in Resources */,
+				8417D8AD286DA5A300B11A56 /* HourlyCollectionViewCell.xib in Resources */,
 				84448D322860843F004A82D6 /* Main.storyboard in Resources */,
+				84B0233E286D4CD10099B7DC /* DailyTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FEAB3DD2FECCFFA2F148B40 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeWork24_RomanGushchik/Pods-HomeWork24_RomanGushchik-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeWork24_RomanGushchik/Pods-HomeWork24_RomanGushchik-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HomeWork24_RomanGushchik/Pods-HomeWork24_RomanGushchik-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		728D100BE091CFF339E0D4DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HomeWork24_RomanGushchik-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84448D232860843F004A82D6 /* Sources */ = {
@@ -190,12 +352,22 @@
 			files = (
 				84448D4128646618004A82D6 /* CityCoordinates.swift in Sources */,
 				84448D4528648EB2004A82D6 /* DailyWeather.swift in Sources */,
+				841E088028696469003DB2F4 /* TabBarViewController.swift in Sources */,
 				84448D3F28609644004A82D6 /* CurrentWeather.swift in Sources */,
+				841E087B28694E30003DB2F4 /* MapViewController.swift in Sources */,
 				84448D2F2860843F004A82D6 /* WeatherViewController.swift in Sources */,
+				8417D8B0286DF99D00B11A56 /* Int+Extension.swift in Sources */,
 				84448D74286739F3004A82D6 /* AlamofireAPIProvider.swift in Sources */,
+				8417D8AC286DA5A300B11A56 /* HourlyCollectionViewCell.swift in Sources */,
+				84E6055D286F66830055EC1C /* WeatherViewController+Extension.swift in Sources */,
 				84448D4328648918004A82D6 /* HourlyWeather.swift in Sources */,
+				84E6055F286F66C70055EC1C /* MapViewController+Extension.swift in Sources */,
+				84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */,
 				84448D2B2860843F004A82D6 /* AppDelegate.swift in Sources */,
+				84E6055B286F66280055EC1C /* HourlyTableViewCell+Extension.swift in Sources */,
 				84448D2D2860843F004A82D6 /* SceneDelegate.swift in Sources */,
+				205072582871CD9000B01E93 /* UIImageView+Extension.swift in Sources */,
+				84B02337286D4C790099B7DC /* HourlyTableViewCell.swift in Sources */,
 				84448D7128673967004A82D6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +510,7 @@
 		};
 		84448D3C28608443004A82D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 366A07FE00FD6CB24DF8DC2C /* Pods-HomeWork24_RomanGushchik.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -366,6 +539,7 @@
 		};
 		84448D3D28608443004A82D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DD021739B30B328D6334D6E /* Pods-HomeWork24_RomanGushchik.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
