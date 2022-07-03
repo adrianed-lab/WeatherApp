@@ -8,18 +8,18 @@
 import Foundation
 import UIKit
 
-extension Date {
-    func getDayForDate(_ date: Self) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "d MMM, yyyy"
-        return formatter.string(from: date)
+enum DateFormat: String {
+    case dateForDay = "d MMM, yyyy"
+    case dateForHour = "h:mm a"
+}
+
+extension TimeInterval {
+    func getDate(_ dateTime: Int, _ dateFormat: DateFormat) -> String {
+        let timeInterval = TimeInterval(dateTime)
+        let date = Date(timeIntervalSince1970: timeInterval)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat.rawValue
+        return dateFormatter.string(from: date)
     }
     
-    func getHoursForDate(_ date: Self) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "h:mm a"
-        return formatter.string(from: date)
-    }
-
-   
 }
