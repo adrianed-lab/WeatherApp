@@ -14,9 +14,9 @@ enum DateFormat: String {
 }
 
 extension TimeInterval {
-    func getDate(_ dateTime: Int, _ dateFormat: DateFormat) -> String {
-        let timeInterval = TimeInterval(dateTime)
-        let date = Date(timeIntervalSince1970: timeInterval)
+    func getDate(_ dateTime: Self, _ dateFormat: DateFormat) -> String {
+        //let timeInterval = TimeInterval(dateTime)
+        let date = Date(timeIntervalSince1970: dateTime)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat.rawValue
         return dateFormatter.string(from: date)

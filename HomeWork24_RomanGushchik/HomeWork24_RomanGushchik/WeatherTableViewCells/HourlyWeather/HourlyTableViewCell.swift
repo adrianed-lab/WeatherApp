@@ -25,6 +25,5 @@ class HourlyTableViewCell: UITableViewCell {
     func configure(with models: [Hourly]) {
         self.models = models
     }
-    
 }
 
