@@ -22,9 +22,9 @@ extension MapViewController: GMSMapViewDelegate {
                 self.feelsLike.text = "FeelLike: \(value.current.feelsLike)"
                 self.weatherDiscription.text = value.current.weather.first?.weatherDescription
                 guard let imageWeatherIcon = value.current.weather.first?.icon else {return}
-                    guard let imageUrl = URL(string: "\(Constants.baseURLForWeatherImage)\(imageWeatherIcon)\(Constants.weatherImageIconURLPrefix)") else {return}
-                    if let imageData = try? Data(contentsOf: imageUrl) {
-                    self.weatherImageIcon.image = UIImage(data: imageData)
+
+                        
+                        self.weatherImageIcon.getWeatherImage(id: short12HoursTime)
                     }
                 }
             case .failure(let error):

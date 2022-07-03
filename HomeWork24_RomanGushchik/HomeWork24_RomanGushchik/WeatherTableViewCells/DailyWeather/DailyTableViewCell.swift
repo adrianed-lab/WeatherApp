@@ -28,9 +28,6 @@ class DailyTableViewCell: UITableViewCell {
         self.hightTempLebl.text = "\(model.temperature.max)°"
         self.dayLabel.text = model.dateTime.timeIntervalToStringDate(.mediumDate)
         guard let iconImage = model.weather.first?.icon else {return}
-        guard let imageUrl = URL(string: "\(Constants.baseURLForWeatherImage)\(iconImage)\(Constants.weatherImageIconURLPrefix)") else {return}
-        if let data = try? Data(contentsOf: imageUrl) {
-            self.iconWeatherImage.image = UIImage(data: data)
-        }
+        self.iconWeatherImage.getWeatherImage(id: iconImage)
     }
 }

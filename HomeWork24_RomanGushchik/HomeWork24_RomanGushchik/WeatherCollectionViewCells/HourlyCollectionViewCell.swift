@@ -22,9 +22,6 @@ class HourlyCollectionViewCell: UICollectionViewCell {
         self.tempLabel.text = "\(model.temperature)°"
         self.hoursLabel.text = model.dateTime.timeIntervalToStringDate(.short12HoursTime)
         guard let iconImage = model.weather.first?.icon else {return}
-        guard let imageUrl = URL(string: "\(Constants.baseURLForWeatherImage)\(iconImage)\(Constants.weatherImageIconURLPrefix)") else {return}
-        if let data = try? Data(contentsOf: imageUrl) {
-            self.self.iconImageView.image = UIImage(data: data)
-        }
+        self.iconImageView.getWeatherImage(id: iconImage)
     }
 }
