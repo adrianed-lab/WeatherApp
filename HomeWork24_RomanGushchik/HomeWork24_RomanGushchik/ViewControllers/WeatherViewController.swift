@@ -6,6 +6,7 @@
     //
 
     import UIKit
+    import RealmSwift
 
     class WeatherViewController: UIViewController {
         
@@ -15,12 +16,14 @@
         var currentWeather: Current!
         var currentLocation: [CityCoordinate]!
         private var apiProvider: RestAPIProviderProtocol!
+        private var realmDataBase: RealmDataBaseProtocol!
         static let key = "WeatherViewController"
         
         override func viewDidLoad() {
         super.viewDidLoad()
         title = "Weather"
         apiProvider = AlamofireAPIProvider()
+        realmDataBase = RealmDataBase()
         myTableView.delegate = self
         myTableView.dataSource = self
         myTableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: HourlyTableViewCell.key)
@@ -43,12 +46,14 @@
     }
 
     private func getWeatherByCoordinate(city: CityCoordinate) {
-        apiProvider.getWeatherByCityCoordinate(latitude: city.latitude, longitude: city.longitude) { result in
+        apiProvider.getWeatherByCityCoordinate(latitude: city.latitude, longitude: city.longitude) { [weak self] result in
+            guard let self = self else {return}
             switch result {
               case .success(let value):
                 self.models.append(contentsOf: value.dailyWeather)
                 self.currentWeather = value.current
                 self.hourlyModels = value.hourlyWeather
+                self.realmDataBase.getDataBase(value: value)
                 DispatchQueue.main.async {
                     self.myTableView.reloadData()
                     self.myTableView.tableHeaderView = self.createTableHeader()
@@ -59,8 +64,9 @@
         }
     }
         func createTableHeader() -> UIView {
-            let tableHeader = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width))
-            tableHeader.backgroundColor = .red
+            let tableHeader = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width/2))
+            tableHeader.layer.cornerRadius = 20
+            tableHeader.backgroundColor = .white
             let currentLocationLabel = UILabel(frame: CGRect(x: 10, y: 10, width: view.frame.size.width, height: tableHeader.frame.size.height/5))
             let tempLabel = UILabel(frame: CGRect(x: 10, y: 20 + currentLocationLabel.frame.size.height, width: view.frame.size.width, height: tableHeader.frame.size.height/2))
             let weatherDiscription = UILabel(frame: CGRect(x: 10, y: 20 + currentLocationLabel.frame.size.height + tempLabel.frame.size.height, width: view.frame.size.width, height: tableHeader.frame.size.height/5))

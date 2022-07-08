@@ -17,15 +17,17 @@ class MapViewController: UIViewController {
     @IBOutlet weak var weatherDiscription: UILabel!
     static let key = "MapViewController"
     var apiProvider: RestAPIProviderProtocol!
+    var realmDateBase: RealmDataBaseProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         apiProvider = AlamofireAPIProvider()
+        realmDateBase = RealmDataBase()
         view.layoutSubviews()
         title = "Map"
         let camera = GMSCameraPosition.camera(withLatitude: 54.029, longitude: 27.597, zoom: 6.0)
         let mapView = GMSMapView.map(withFrame: conteinerForMapView.frame, camera: camera)
         conteinerForMapView.addSubview(mapView)
         mapView.delegate = self
+        }
     }
-}

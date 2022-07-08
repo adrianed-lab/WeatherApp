@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		205072582871CD9000B01E93 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205072572871CD9000B01E93 /* UIImageView+Extension.swift */; };
-		207BFCFD8DDEEC5161B76F74 /* Pods_HomeWork24_RomanGushchik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7501A9A23AE05325410EE341 /* Pods_HomeWork24_RomanGushchik.framework */; };
 		8417D8AC286DA5A300B11A56 /* HourlyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417D8AA286DA5A300B11A56 /* HourlyCollectionViewCell.swift */; };
 		8417D8AD286DA5A300B11A56 /* HourlyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8417D8AB286DA5A300B11A56 /* HourlyCollectionViewCell.xib */; };
 		8417D8B0286DF99D00B11A56 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8417D8AF286DF99D00B11A56 /* Int+Extension.swift */; };
@@ -28,6 +27,9 @@
 		84448D6F286738C0004A82D6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 84448D6E286738C0004A82D6 /* Alamofire */; };
 		84448D7128673967004A82D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448D7028673966004A82D6 /* Constants.swift */; };
 		84448D74286739F3004A82D6 /* AlamofireAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448D73286739F3004A82D6 /* AlamofireAPIProvider.swift */; };
+		844E28C92875805D000C3510 /* HistoryRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E28C72875805D000C3510 /* HistoryRequestTableViewCell.swift */; };
+		844E28CA2875805D000C3510 /* HistoryRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844E28C82875805D000C3510 /* HistoryRequestTableViewCell.xib */; };
+		844E28CD28761E6B000C3510 /* HistoryRequestViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E28CC28761E6B000C3510 /* HistoryRequestViewController+Extension.swift */; };
 		84B02337286D4C790099B7DC /* HourlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B02335286D4C790099B7DC /* HourlyTableViewCell.swift */; };
 		84B02338286D4C790099B7DC /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */; };
 		84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */; };
@@ -35,6 +37,13 @@
 		84E6055B286F66280055EC1C /* HourlyTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055A286F66280055EC1C /* HourlyTableViewCell+Extension.swift */; };
 		84E6055D286F66830055EC1C /* WeatherViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */; };
 		84E6055F286F66C70055EC1C /* MapViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */; };
+		84E6056228722FE00055EC1C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 84E6056128722FE00055EC1C /* Realm */; };
+		84E6056428722FE00055EC1C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 84E6056328722FE00055EC1C /* RealmSwift */; };
+		84E60566287231030055EC1C /* HistoryRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E60565287231030055EC1C /* HistoryRequestViewController.swift */; };
+		84E60568287231D70055EC1C /* RealmDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E60567287231D70055EC1C /* RealmDataBase.swift */; };
+		84E6056A287232330055EC1C /* HistoryRequest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E60569287232330055EC1C /* HistoryRequest.storyboard */; };
+		84E6056C2873432E0055EC1C /* GetRealmDataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6056B2873432D0055EC1C /* GetRealmDataBase.swift */; };
+		84F0655E287579F4000A66AE /* Pods_HomeWork24_RomanGushchik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7501A9A23AE05325410EE341 /* Pods_HomeWork24_RomanGushchik.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +71,9 @@
 		84448D4428648EB2004A82D6 /* DailyWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeather.swift; sourceTree = "<group>"; };
 		84448D7028673966004A82D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		84448D73286739F3004A82D6 /* AlamofireAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAPIProvider.swift; sourceTree = "<group>"; };
+		844E28C72875805D000C3510 /* HistoryRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRequestTableViewCell.swift; sourceTree = "<group>"; };
+		844E28C82875805D000C3510 /* HistoryRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryRequestTableViewCell.xib; sourceTree = "<group>"; };
+		844E28CC28761E6B000C3510 /* HistoryRequestViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryRequestViewController+Extension.swift"; sourceTree = "<group>"; };
 		84B02335286D4C790099B7DC /* HourlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTableViewCell.swift; sourceTree = "<group>"; };
 		84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
 		84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
@@ -69,6 +81,10 @@
 		84E6055A286F66280055EC1C /* HourlyTableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HourlyTableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherViewController+Extension.swift"; sourceTree = "<group>"; };
 		84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+Extension.swift"; sourceTree = "<group>"; };
+		84E60565287231030055EC1C /* HistoryRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRequestViewController.swift; sourceTree = "<group>"; };
+		84E60567287231D70055EC1C /* RealmDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDataBase.swift; sourceTree = "<group>"; };
+		84E60569287232330055EC1C /* HistoryRequest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryRequest.storyboard; sourceTree = "<group>"; };
+		84E6056B2873432D0055EC1C /* GetRealmDataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRealmDataBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +92,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F0655E287579F4000A66AE /* Pods_HomeWork24_RomanGushchik.framework in Frameworks */,
+				84E6056428722FE00055EC1C /* RealmSwift in Frameworks */,
+				84E6056228722FE00055EC1C /* Realm in Frameworks */,
 				84448D6F286738C0004A82D6 /* Alamofire in Frameworks */,
-				207BFCFD8DDEEC5161B76F74 /* Pods_HomeWork24_RomanGushchik.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +136,7 @@
 				84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */,
 				84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */,
 				205072572871CD9000B01E93 /* UIImageView+Extension.swift */,
+				844E28CC28761E6B000C3510 /* HistoryRequestViewController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -127,6 +146,7 @@
 			children = (
 				84448D302860843F004A82D6 /* Main.storyboard */,
 				841E087D28695167003DB2F4 /* MapStoryboard.storyboard */,
+				84E60569287232330055EC1C /* HistoryRequest.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -157,9 +177,9 @@
 				84448D7028673966004A82D6 /* Constants.swift */,
 				8417D8B1286DFA6B00B11A56 /* Extensions */,
 				8417D8AE286DA5A800B11A56 /* WeatherCollectionViewCells */,
-				84B02334286D4BDC0099B7DC /* WeatherTableViewCells */,
+				844E28C628757F80000C3510 /* TableViewCells */,
 				84448D76286751B6004A82D6 /* ViewControllers */,
-				84448D7528673A1C004A82D6 /* APIProviders */,
+				84448D7528673A1C004A82D6 /* Services */,
 				84448D6C286737C2004A82D6 /* Models */,
 				841E087C28694E72003DB2F4 /* Storyboards */,
 				84448D3328608443004A82D6 /* Assets.xcassets */,
@@ -172,6 +192,7 @@
 		84448D6C286737C2004A82D6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				84E60567287231D70055EC1C /* RealmDataBase.swift */,
 				84448D4028646618004A82D6 /* CityCoordinates.swift */,
 				84448D3E28609644004A82D6 /* CurrentWeather.swift */,
 				84448D4228648918004A82D6 /* HourlyWeather.swift */,
@@ -180,12 +201,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		84448D7528673A1C004A82D6 /* APIProviders */ = {
+		84448D7528673A1C004A82D6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				84448D73286739F3004A82D6 /* AlamofireAPIProvider.swift */,
+				84E6056B2873432D0055EC1C /* GetRealmDataBase.swift */,
 			);
-			path = APIProviders;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		84448D76286751B6004A82D6 /* ViewControllers */ = {
@@ -194,8 +216,26 @@
 				841E087F28696469003DB2F4 /* TabBarViewController.swift */,
 				84448D2E2860843F004A82D6 /* WeatherViewController.swift */,
 				841E087A28694E30003DB2F4 /* MapViewController.swift */,
+				84E60565287231030055EC1C /* HistoryRequestViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		844E28C628757F80000C3510 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				84B02334286D4BDC0099B7DC /* WeatherTableViewCells */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		844E28CB28758073000C3510 /* HistoryRequest */ = {
+			isa = PBXGroup;
+			children = (
+				844E28C72875805D000C3510 /* HistoryRequestTableViewCell.swift */,
+				844E28C82875805D000C3510 /* HistoryRequestTableViewCell.xib */,
+			);
+			path = HistoryRequest;
 			sourceTree = "<group>";
 		};
 		84B02334286D4BDC0099B7DC /* WeatherTableViewCells */ = {
@@ -203,6 +243,7 @@
 			children = (
 				84B02339286D4C7F0099B7DC /* HourlyWeather */,
 				84B0233A286D4CA80099B7DC /* DailyWeather */,
+				844E28CB28758073000C3510 /* HistoryRequest */,
 			);
 			path = WeatherTableViewCells;
 			sourceTree = "<group>";
@@ -245,6 +286,8 @@
 			name = HomeWork24_RomanGushchik;
 			packageProductDependencies = (
 				84448D6E286738C0004A82D6 /* Alamofire */,
+				84E6056128722FE00055EC1C /* Realm */,
+				84E6056328722FE00055EC1C /* RealmSwift */,
 			);
 			productName = HomeWork24_RomanGushchik;
 			productReference = 84448D272860843F004A82D6 /* HomeWork24_RomanGushchik.app */;
@@ -276,6 +319,7 @@
 			mainGroup = 84448D1E2860843F004A82D6;
 			packageReferences = (
 				84448D6D286738C0004A82D6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				84E6056028722FE00055EC1C /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 84448D282860843F004A82D6 /* Products */;
 			projectDirPath = "";
@@ -294,8 +338,10 @@
 				84448D3728608443004A82D6 /* LaunchScreen.storyboard in Resources */,
 				84B02338286D4C790099B7DC /* HourlyTableViewCell.xib in Resources */,
 				84448D3428608443004A82D6 /* Assets.xcassets in Resources */,
+				844E28CA2875805D000C3510 /* HistoryRequestTableViewCell.xib in Resources */,
 				841E087E28695167003DB2F4 /* MapStoryboard.storyboard in Resources */,
 				8417D8AD286DA5A300B11A56 /* HourlyCollectionViewCell.xib in Resources */,
+				84E6056A287232330055EC1C /* HistoryRequest.storyboard in Resources */,
 				84448D322860843F004A82D6 /* Main.storyboard in Resources */,
 				84B0233E286D4CD10099B7DC /* DailyTableViewCell.xib in Resources */,
 			);
@@ -353,16 +399,21 @@
 				84448D4128646618004A82D6 /* CityCoordinates.swift in Sources */,
 				84448D4528648EB2004A82D6 /* DailyWeather.swift in Sources */,
 				841E088028696469003DB2F4 /* TabBarViewController.swift in Sources */,
+				84E6056C2873432E0055EC1C /* GetRealmDataBase.swift in Sources */,
+				84E60566287231030055EC1C /* HistoryRequestViewController.swift in Sources */,
 				84448D3F28609644004A82D6 /* CurrentWeather.swift in Sources */,
 				841E087B28694E30003DB2F4 /* MapViewController.swift in Sources */,
 				84448D2F2860843F004A82D6 /* WeatherViewController.swift in Sources */,
 				8417D8B0286DF99D00B11A56 /* Int+Extension.swift in Sources */,
+				84E60568287231D70055EC1C /* RealmDataBase.swift in Sources */,
 				84448D74286739F3004A82D6 /* AlamofireAPIProvider.swift in Sources */,
+				844E28C92875805D000C3510 /* HistoryRequestTableViewCell.swift in Sources */,
 				8417D8AC286DA5A300B11A56 /* HourlyCollectionViewCell.swift in Sources */,
 				84E6055D286F66830055EC1C /* WeatherViewController+Extension.swift in Sources */,
 				84448D4328648918004A82D6 /* HourlyWeather.swift in Sources */,
 				84E6055F286F66C70055EC1C /* MapViewController+Extension.swift in Sources */,
 				84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */,
+				844E28CD28761E6B000C3510 /* HistoryRequestViewController+Extension.swift in Sources */,
 				84448D2B2860843F004A82D6 /* AppDelegate.swift in Sources */,
 				84E6055B286F66280055EC1C /* HourlyTableViewCell+Extension.swift in Sources */,
 				84448D2D2860843F004A82D6 /* SceneDelegate.swift in Sources */,
@@ -598,6 +649,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		84E6056028722FE00055EC1C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.19.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -605,6 +664,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 84448D6D286738C0004A82D6 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		84E6056128722FE00055EC1C /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84E6056028722FE00055EC1C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		84E6056328722FE00055EC1C /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84E6056028722FE00055EC1C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
