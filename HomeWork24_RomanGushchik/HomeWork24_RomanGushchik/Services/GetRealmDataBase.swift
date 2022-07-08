@@ -23,17 +23,16 @@ class RealmDataBase: RealmDataBaseProtocol {
                 realmCurrentWeatherDataBase.temp = value.current.temperature
                 realmCurrentWeatherDataBase.feelsLike = value.current.feelsLike
                 realmCurrentWeatherDataBase.weatherDiscription = weather
-                realmCurrentWeatherDataBase.time = Int(date.timeIntervalSince1970)
+                realmCurrentWeatherDataBase.dateTime = Int(date.timeIntervalSince1970)
                 realm.add(realmCurrentWeatherDataBase)
                 let realmDataBase = CurrentPlaceData()
                 realmDataBase.lat = value.latitude
                 realmDataBase.lon = value.longitude
-                realmDataBase.time = Int(date.timeIntervalSince1970)
                 realmDataBase.currentWeather = realmCurrentWeatherDataBase
                 realm.add(realmDataBase)
                 print(realm.configuration.fileURL)
-        
             }
+        
         }
     }
     
