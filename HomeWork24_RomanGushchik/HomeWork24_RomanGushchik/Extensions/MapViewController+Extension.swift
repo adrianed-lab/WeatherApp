@@ -24,13 +24,13 @@ extension MapViewController: GMSMapViewDelegate {
                 self.feelsLike.text = "FeelLike: \(value.current.feelsLike)"
                 self.weatherDiscription.text = weather
                 self.realmDateBase.getDataBase(value: value)
-
                 guard let imageWeatherIcon = value.current.weather.first?.icon else {return}
                 self.weatherImageIcon.getWeatherImage(id: imageWeatherIcon)
                 }
             case .failure(let error):
                 print(error)
+                }
             }
         }
     }
-}
+
