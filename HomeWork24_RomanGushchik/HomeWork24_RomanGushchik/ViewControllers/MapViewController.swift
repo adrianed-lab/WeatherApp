@@ -29,5 +29,5 @@ class MapViewController: UIViewController {
         let mapView = GMSMapView.map(withFrame: conteinerForMapView.frame, camera: camera)
         conteinerForMapView.addSubview(mapView)
         mapView.delegate = self
+        }
     }
-}
