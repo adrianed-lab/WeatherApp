@@ -10,8 +10,8 @@ import RealmSwift
 
 class HistoryRequestViewController: UIViewController {
     @IBOutlet weak var historyRequestTableView: UITableView!
-    let realm = try! Realm()
     var collectionCurrentPlace: Results<CurrentPlaceData>!
+    var realmDataBase: RealmDataBaseProtocol!
     var notificationToken: NotificationToken!
    
     
@@ -20,15 +20,15 @@ class HistoryRequestViewController: UIViewController {
         super.viewDidLoad()
         title = "HistoryRequest"
         historyRequestTableView.register(UINib(nibName: "HistoryRequestTableViewCell", bundle: nil), forCellReuseIdentifier: HistoryRequestTableViewCell.key)
-        collectionCurrentPlace = realm.objects(CurrentPlaceData.self)
-
+        realmDataBase = RealmDataBase()
+        collectionCurrentPlace = realmDataBase.getObject(nameObject: CurrentPlaceData.self)
         notificationToken = collectionCurrentPlace.observe({ [weak self] (changes: RealmCollectionChange) in
             guard let self = self else {return}
             guard let tableView = self.historyRequestTableView else {return}
             switch changes {
                 case .initial:
-                    tableView.reloadData()
-                case .update(_ , let deletions, let insertions, let modifications):
+                tableView.reloadData()
+            case .update(_ , let deletions , let insertions, let modifications):
                     tableView.performBatchUpdates ({
                     tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
                     tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
@@ -38,5 +38,8 @@ class HistoryRequestViewController: UIViewController {
                     fatalError("\(error)")
             }
         })
+    }
+    deinit {
+        notificationToken.invalidate()
     }
 }
