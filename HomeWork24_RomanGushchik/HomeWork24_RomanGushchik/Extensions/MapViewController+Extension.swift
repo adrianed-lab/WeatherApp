@@ -24,6 +24,7 @@ extension MapViewController: GMSMapViewDelegate {
                 self.feelsLike.text = "FeelLike: \(value.current.feelsLike)"
                 self.weatherDiscription.text = weather
                 self.realmDateBase.getDataBase(value: value)
+                self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather)
                 guard let imageWeatherIcon = value.current.weather.first?.icon else {return}
                 self.weatherImageIcon.getWeatherImage(id: imageWeatherIcon)
                 }
