@@ -11,6 +11,7 @@ import RealmSwift
 class CurrentPlaceData: Object {
     @objc dynamic var lat: Double = 0
     @objc dynamic var lon: Double = 0
+    @objc dynamic var dateTime: Int = 0
     @objc dynamic var currentWeather: CurrentWeatherData!
 }
 

@@ -11,9 +11,17 @@ import UIKit
 
 protocol RealmDataBaseProtocol {
     func getDataBase(value: CurrentWeather)
+    func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData>
 }
 
 class RealmDataBase: RealmDataBaseProtocol {
+    
+    func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData>{
+        let realm = try! Realm()
+        let currentPlaceData = realm.objects(nameObject).sorted(byKeyPath: "dateTime", ascending: false)
+        return currentPlaceData
+    }
+    
     func getDataBase(value: CurrentWeather) {
             guard let weather = value.current.weather.first?.weatherDescription else {return}
             let date = Date()
@@ -28,11 +36,11 @@ class RealmDataBase: RealmDataBaseProtocol {
                 let realmDataBase = CurrentPlaceData()
                 realmDataBase.lat = value.latitude
                 realmDataBase.lon = value.longitude
+                realmDataBase.dateTime = Int(date.timeIntervalSince1970)
                 realmDataBase.currentWeather = realmCurrentWeatherDataBase
                 realm.add(realmDataBase)
                 print(realm.configuration.fileURL)
             }
-        
         }
     }
     
