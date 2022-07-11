@@ -7,6 +7,7 @@
 
     import UIKit
     import RealmSwift
+    import UserNotifications
 
     class WeatherViewController: UIViewController {
         
@@ -17,6 +18,7 @@
         var currentLocation: [CityCoordinate]!
         private var apiProvider: RestAPIProviderProtocol!
         private var realmDataBase: RealmDataBaseProtocol!
+        private var localNotification: NotificationProtocol!
         static let key = "WeatherViewController"
         
         override func viewDidLoad() {
@@ -24,6 +26,7 @@
         title = "Weather"
         apiProvider = AlamofireAPIProvider()
         realmDataBase = RealmDataBase()
+        localNotification = UserNotification()
         myTableView.delegate = self
         myTableView.dataSource = self
         myTableView.register(UINib(nibName: "HourlyTableViewCell", bundle: nil), forCellReuseIdentifier: HourlyTableViewCell.key)
@@ -54,6 +57,7 @@
                 self.currentWeather = value.current
                 self.hourlyModels = value.hourlyWeather
                 self.realmDataBase.getDataBase(value: value)
+                self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather)
                 DispatchQueue.main.async {
                     self.myTableView.reloadData()
                     self.myTableView.tableHeaderView = self.createTableHeader()
@@ -63,6 +67,7 @@
                 }
         }
     }
+        
         func createTableHeader() -> UIView {
             let tableHeader = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width/2))
             tableHeader.layer.cornerRadius = 20

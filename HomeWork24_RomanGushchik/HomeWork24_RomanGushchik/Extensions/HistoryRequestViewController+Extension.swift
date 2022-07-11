@@ -21,6 +21,7 @@ extension HistoryRequestViewController: UITableViewDelegate, UITableViewDataSour
         if let cell = tableView.dequeueReusableCell(withIdentifier: HistoryRequestTableViewCell.key, for: indexPath) as? HistoryRequestTableViewCell {
             let item = collectionCurrentPlace[indexPath.row]
             cell.configure(model: item)
+            return cell
         }
         return UITableViewCell()
     }
@@ -28,9 +29,4 @@ extension HistoryRequestViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         150
     }
-    func reloadData() {
-        historyRequestTableView.reloadData()
-    }
-    
-    
 }

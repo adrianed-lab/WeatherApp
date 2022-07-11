@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
     var apiProvider: RestAPIProviderProtocol!
     var realmDateBase: RealmDataBaseProtocol!
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         apiProvider = AlamofireAPIProvider()

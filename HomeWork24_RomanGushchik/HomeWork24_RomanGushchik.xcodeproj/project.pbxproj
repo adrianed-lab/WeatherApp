@@ -30,6 +30,7 @@
 		844E28C92875805D000C3510 /* HistoryRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E28C72875805D000C3510 /* HistoryRequestTableViewCell.swift */; };
 		844E28CA2875805D000C3510 /* HistoryRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844E28C82875805D000C3510 /* HistoryRequestTableViewCell.xib */; };
 		844E28CD28761E6B000C3510 /* HistoryRequestViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E28CC28761E6B000C3510 /* HistoryRequestViewController+Extension.swift */; };
+		844E28CF287B70BA000C3510 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E28CE287B70BA000C3510 /* LocalNotifications.swift */; };
 		84B02337286D4C790099B7DC /* HourlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B02335286D4C790099B7DC /* HourlyTableViewCell.swift */; };
 		84B02338286D4C790099B7DC /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */; };
 		84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */; };
@@ -74,6 +75,7 @@
 		844E28C72875805D000C3510 /* HistoryRequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRequestTableViewCell.swift; sourceTree = "<group>"; };
 		844E28C82875805D000C3510 /* HistoryRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryRequestTableViewCell.xib; sourceTree = "<group>"; };
 		844E28CC28761E6B000C3510 /* HistoryRequestViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryRequestViewController+Extension.swift"; sourceTree = "<group>"; };
+		844E28CE287B70BA000C3510 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
 		84B02335286D4C790099B7DC /* HourlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTableViewCell.swift; sourceTree = "<group>"; };
 		84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
 		84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			children = (
 				84448D73286739F3004A82D6 /* AlamofireAPIProvider.swift */,
 				84E6056B2873432D0055EC1C /* GetRealmDataBase.swift */,
+				844E28CE287B70BA000C3510 /* LocalNotifications.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 				84448D3F28609644004A82D6 /* CurrentWeather.swift in Sources */,
 				841E087B28694E30003DB2F4 /* MapViewController.swift in Sources */,
 				84448D2F2860843F004A82D6 /* WeatherViewController.swift in Sources */,
+				844E28CF287B70BA000C3510 /* LocalNotifications.swift in Sources */,
 				8417D8B0286DF99D00B11A56 /* Int+Extension.swift in Sources */,
 				84E60568287231D70055EC1C /* RealmDataBase.swift in Sources */,
 				84448D74286739F3004A82D6 /* AlamofireAPIProvider.swift in Sources */,
