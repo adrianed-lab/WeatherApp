@@ -18,14 +18,12 @@ class MapViewController: UIViewController {
     static let key = "MapViewController"
     var apiProvider: RestAPIProviderProtocol!
     var realmDateBase: RealmDataBaseProtocol!
-    var localNotification: NotificationProtocol!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         apiProvider = AlamofireAPIProvider()
         realmDateBase = RealmDataBase()
-        localNotification = UserNotification()
         view.layoutSubviews()
         title = "Map"
         let camera = GMSCameraPosition.camera(withLatitude: 54.029, longitude: 27.597, zoom: 6.0)

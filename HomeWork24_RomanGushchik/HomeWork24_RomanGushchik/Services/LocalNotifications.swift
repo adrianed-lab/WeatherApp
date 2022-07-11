@@ -14,16 +14,15 @@ protocol NotificationProtocol {
     func removeNotification(withIdentifiers identifiers: [String])
 }
 class UserNotification: NotificationProtocol {
+    let notificationCenter = UNUserNotificationCenter.current()
+    
     func removeNotification(withIdentifiers identifiers: [String]) {
-        let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.removePendingNotificationRequests(withIdentifiers: identifiers)
-        
     }
     
     func createLocalNotification(valueWeather: [Hourly]) {
         removeNotification(withIdentifiers: ["Check notification"])
         guard let mainWeather = valueWeather.first?.weather.first?.main else {return}
-        let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { permissionGranted, error in
             if !permissionGranted {
                     print("Permission Denied")
@@ -39,7 +38,7 @@ class UserNotification: NotificationProtocol {
                 let identifier = "Check notification"
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1800, repeats: false)
                 let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-                notificationCenter.add(request) { error in
+                    self.notificationCenter.add(request) { error in
                     print(error?.localizedDescription)
                         }
                     }

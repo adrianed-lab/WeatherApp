@@ -15,9 +15,9 @@ protocol RealmDataBaseProtocol {
 }
 
 class RealmDataBase: RealmDataBaseProtocol {
+    let realm = try! Realm()
     
-    func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData>{
-        let realm = try! Realm()
+    func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData> {
         let currentPlaceData = realm.objects(nameObject).sorted(byKeyPath: "dateTime", ascending: false)
         return currentPlaceData
     }
@@ -25,7 +25,6 @@ class RealmDataBase: RealmDataBaseProtocol {
     func getDataBase(value: CurrentWeather) {
             guard let weather = value.current.weather.first?.weatherDescription else {return}
             let date = Date()
-            let realm = try! Realm()
             try! realm.write {
                 let realmCurrentWeatherDataBase = CurrentWeatherData()
                 realmCurrentWeatherDataBase.temp = value.current.temperature
