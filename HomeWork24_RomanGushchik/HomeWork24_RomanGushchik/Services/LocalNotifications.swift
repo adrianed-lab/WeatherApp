@@ -39,7 +39,8 @@ class UserNotification: NotificationProtocol {
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1800, repeats: false)
                 let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
                     self.notificationCenter.add(request) { error in
-                    print(error?.localizedDescription)
+                        guard let error = error else {return}
+                    print(error.localizedDescription)
                         }
                     }
                 }

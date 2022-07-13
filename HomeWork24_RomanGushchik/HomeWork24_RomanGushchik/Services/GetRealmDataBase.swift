@@ -38,7 +38,8 @@ class RealmDataBase: RealmDataBaseProtocol {
                 realmDataBase.dateTime = Int(date.timeIntervalSince1970)
                 realmDataBase.currentWeather = realmCurrentWeatherDataBase
                 realm.add(realmDataBase)
-                print(realm.configuration.fileURL)
+                guard let url = realm.configuration.fileURL else {return}
+                print(url)
             }
         }
     }
