@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,22 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="s6B-Uq-A5J">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M1i-iq-2gq">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="s6B-Uq-A5J">
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <color key="sectionIndexBackgroundColor" name="AccentColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="M1i-iq-2gq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="26y-MI-HPx"/>
                             <constraint firstItem="s6B-Uq-A5J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CrO-UM-ycl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="s6B-Uq-A5J" secondAttribute="trailing" id="QEp-0k-OeX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="M1i-iq-2gq" secondAttribute="trailing" id="gb1-Lx-jhM"/>
                             <constraint firstItem="s6B-Uq-A5J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hZp-xe-Uow"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="s6B-Uq-A5J" secondAttribute="bottom" id="lhu-z4-vZe"/>
+                            <constraint firstItem="M1i-iq-2gq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="p3k-RO-zHl"/>
+                            <constraint firstAttribute="bottom" secondItem="M1i-iq-2gq" secondAttribute="bottom" id="zrX-zd-gqT"/>
                         </constraints>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="imageWeatherView" destination="M1i-iq-2gq" id="FrX-Vb-lGa"/>
                         <outlet property="myTableView" destination="s6B-Uq-A5J" id="CKQ-tr-iDn"/>
                     </connections>
                 </viewController>
@@ -42,9 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
