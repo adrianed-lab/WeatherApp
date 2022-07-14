@@ -25,8 +25,8 @@
         override func viewDidLoad() {
         super.viewDidLoad()
         title = "Weather"
-            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.orange]
-            
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.red]
+        
         apiProvider = AlamofireAPIProvider()
         realmDataBase = RealmDataBase()
         localNotification = UserNotification()
@@ -76,22 +76,8 @@
         }
     }
         func getImageForBackground(mainWeather: String) -> UIImage {
-            switch mainWeather {
-            case "Clouds":
-                guard let image = UIImage(named: "clouds") else {return UIImage()}
-             return image
-            case "Rain":
-                guard let image = UIImage(named: "rain") else {return UIImage()}
-             return image
-            case "Clear":
-                guard let image = UIImage(named: "clear") else {return UIImage()}
-             return image
-            case "Snow":
-                guard let image = UIImage(named: "snow") else {return UIImage()}
-             return image
-          default:
-                return UIImage()
-            }
+            guard let image = UIImage(named: mainWeather) else {return UIImage()}
+            return image
        }
         
         func createTableHeader() -> UIView {
