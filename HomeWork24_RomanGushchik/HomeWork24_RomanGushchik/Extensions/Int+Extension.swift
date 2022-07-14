@@ -9,16 +9,16 @@ import Foundation
 import UIKit
 
 enum DateFormat {
-    case mediumDate
-    case short12HoursTime
+    case shortDate
+    case short24HoursTime
     case fullDate
     
     var formatPattern: String {
         switch self {
-        case .mediumDate:
-            return "d MMM, yyyy"
-        case .short12HoursTime:
-            return "h:mm a"
+        case .shortDate:
+            return "EEEE"
+        case .short24HoursTime:
+            return "HH:mm"
         case .fullDate:
             return "d MMM, h:mm a"
         }
