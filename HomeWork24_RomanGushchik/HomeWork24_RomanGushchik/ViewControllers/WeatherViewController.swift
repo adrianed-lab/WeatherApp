@@ -62,7 +62,7 @@
                 self.hourlyModels = value.hourlyWeather
                 self.realmDataBase.getDataBase(value: value)
                 self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather)
-                guard let mainWeather = value.hourlyWeather.first?.weather.first?.main.rawValue else {return}
+                guard let mainWeather = self.currentWeather.weather.first?.main else {return}
                 let backgroundImage = self.getImageForBackground(mainWeather: mainWeather)
                 DispatchQueue.main.async {
                     self.myTableView.reloadData()
