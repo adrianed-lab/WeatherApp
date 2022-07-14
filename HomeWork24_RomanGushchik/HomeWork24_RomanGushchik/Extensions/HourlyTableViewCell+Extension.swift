@@ -20,14 +20,7 @@ extension HourlyTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "HourlyCollectionViewCell", for: indexPath) as! HourlyCollectionViewCell
-        if indexPath.row == 0 {
-            cell.configureForNow(with: hourlyModels[indexPath.row])
-            return cell
-        }
-            cell.configure(with: hourlyModels[indexPath.row])
-            return cell
+        indexPath.row == 0 ? cell.configure(with: hourlyModels[indexPath.row], textForHour: "Now") : cell.configure(with: hourlyModels[indexPath.row], textForHour: hourlyModels[indexPath.row].dateTime.timeIntervalToStringDate(.short24HoursTime))
+        return cell
     }
-    
-    
-    
 }
