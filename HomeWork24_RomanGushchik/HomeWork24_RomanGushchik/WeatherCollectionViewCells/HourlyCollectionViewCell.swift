@@ -18,15 +18,9 @@ class HourlyCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func configure(with model: Hourly) {
+    func configure(with model: Hourly, textForHour: String) {
         self.tempLabel.text = "\(Int(model.temperature))°"
-        self.hoursLabel.text = model.dateTime.timeIntervalToStringDate(.short24HoursTime)
-        guard let iconImage = model.weather.first?.icon else {return}
-        self.iconImageView.getWeatherImage(id: iconImage)
-    }
-    func configureForNow(with model: Hourly) {
-        self.tempLabel.text = "\(Int(model.temperature))°"
-        self.hoursLabel.text = "Now"
+        self.hoursLabel.text = textForHour
         guard let iconImage = model.weather.first?.icon else {return}
         self.iconImageView.getWeatherImage(id: iconImage)
     }
