@@ -19,7 +19,8 @@ class HourlyTableViewCell: UITableViewCell {
         myCollectionView.dataSource = self
         DispatchQueue.main.async {
             let blur = UIBlurEffect(style: .systemUltraThinMaterialDark)
-            let blurView = UIVisualEffectView(effect: blur)            
+            let blurView = UIVisualEffectView(effect: blur)
+            blurView.alpha = 0.5
             blurView.frame = CGRect(x: 0, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height)
             self.contentView.addSubview(blurView)
             self.contentView.sendSubviewToBack(blurView)
