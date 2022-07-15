@@ -23,12 +23,16 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
         let cell = tableView.dequeueReusableCell(withIdentifier: HourlyTableViewCell.key, for: indexPath) as! HourlyTableViewCell
-            cell.configure(with: hourlyModels)
+            DispatchQueue.global(qos: .userInteractive).async {
+                cell.configure(with: self.hourlyModels)
+            }
             return cell
         }
         else {
         let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.key, for: indexPath) as! DailyTableViewCell
-            cell.configure(model: dailyWeather[indexPath.row], textForDay: indexPath.row == 0 ? "Today" : dailyWeather[indexPath.row].dateTime.timeIntervalToStringDate(.shortDate))
+            DispatchQueue.global(qos: .userInteractive).async {
+                cell.configure(model: self.dailyWeather[indexPath.row], textForDay: indexPath.row == 0 ? "Today" : self.dailyWeather[indexPath.row].dateTime.timeIntervalToStringDate(.shortDate))
+            }
             return cell
         }
     }
