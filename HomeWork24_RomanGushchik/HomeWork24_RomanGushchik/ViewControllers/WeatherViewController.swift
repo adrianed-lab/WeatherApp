@@ -42,10 +42,12 @@
             apiProvider.getCoordinateByCityName(cityName: "Minsk") { result in
             switch result {
                 case .success(let value):
-                self.currentLocation = value
-                if let city = value.first {
-                    self.getWeatherByCoordinate(city: city)
+                DispatchQueue.global(qos: .userInitiated).async {
+                    self.currentLocation = value
+                    if let city = value.first {
+                        self.getWeatherByCoordinate(city: city)
                     }
+                }
                 case .failure(let error):
                     print(error.localizedDescription)
             }
@@ -57,9 +59,11 @@
             guard let self = self else {return}
             switch result {
               case .success(let value):
-                self.dailyWeather.append(contentsOf: value.dailyWeather)
-                self.currentWeather = value.current
-                self.hourlyModels = value.hourlyWeather
+                DispatchQueue.global(qos: .userInitiated).async {
+                    self.dailyWeather.append(contentsOf: value.dailyWeather)
+                    self.currentWeather = value.current
+                    self.hourlyModels = value.hourlyWeather
+                }
                 self.realmDataBase.getDataBase(value: value)
                 self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather)
                 guard let mainWeather = self.currentWeather.weather.first?.main else {return}
