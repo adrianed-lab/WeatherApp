@@ -19,9 +19,14 @@ class HourlyCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with model: Hourly, textForHour: String) {
-        self.tempLabel.text = "\(Int(model.temperature))°"
-        self.hoursLabel.text = textForHour
-        guard let iconImage = model.weather.first?.icon else {return}
-        self.iconImageView.getWeatherImage(id: iconImage)
+        DispatchQueue.main.async {
+            self.tempLabel.text = "\(Int(model.temperature))°"
+            self.hoursLabel.text = textForHour
+        }
+        DispatchQueue.main.async {
+            guard let iconImage = model.weather.first?.icon else {return}
+                self.iconImageView.getWeatherImage(id: iconImage)
+        }
     }
 }
+

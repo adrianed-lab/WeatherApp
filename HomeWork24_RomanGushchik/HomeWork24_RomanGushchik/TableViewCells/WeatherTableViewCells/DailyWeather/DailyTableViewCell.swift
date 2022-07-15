@@ -31,10 +31,15 @@ class DailyTableViewCell: UITableViewCell {
     }
     
     func configure(model: Daily, textForDay: String) {
-        self.lowTempLabel.text = "\(Int(model.temperature.min))°"
-        self.hightTempLebl.text = "\(Int(model.temperature.max))°"
-        self.dayLabel.text = textForDay
-        guard let iconImage = model.weather.first?.icon else {return}
-        self.iconWeatherImage.getWeatherImage(id: iconImage)
+        DispatchQueue.main.async {
+            self.lowTempLabel.text = "\(Int(model.temperature.min))°"
+            self.hightTempLebl.text = "\(Int(model.temperature.max))°"
+            self.dayLabel.text = textForDay
+            DispatchQueue.main.async {
+                guard let iconImage = model.weather.first?.icon else {return}
+                    self.iconWeatherImage.getWeatherImage(id: iconImage)
+            }
+            
+        }
     }
 }
