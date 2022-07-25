@@ -12,25 +12,33 @@ import RealmSwift
 
 extension MapViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        self.myMarker.position = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        self.myMarker.map = mapView
         apiProvider.getWeatherByCityCoordinate(latitude: coordinate.latitude, longitude: coordinate.longitude) { [weak self] result in
             guard let self = self else {return}
             switch result {
                 case .success(let value):
-                guard let weather = value.current.weather.first?.weatherDescription else {return}
                 DispatchQueue.main.async {
-                self.weatherView.backgroundColor = .blue
-                self.conteinerForMapView.addSubview(self.weatherView)
-                self.temperature.text = "\(value.current.temperature)"
-                self.feelsLike.text = "FeelLike: \(value.current.feelsLike)"
-                self.weatherDiscription.text = weather
-                self.realmDateBase.getDataBase(value: value)
-                guard let imageWeatherIcon = value.current.weather.first?.icon else {return}
-                self.weatherImageIcon.getWeatherImage(id: imageWeatherIcon)
+                    guard let infoWindow = Bundle.main.loadNibNamed("InfoWindow", owner: self)?.first as? CustomInfoWindow else {return}
+                    infoWindow.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+                    infoWindow.layer.cornerRadius = 25
+                    guard let weatherImage = value.current.weather.first?.icon else {return}
+                    infoWindow.speedWindLabel.text = "Wind speed \(value.current.windSpeed) м/с"
+                    infoWindow.currentTempLabel.text = "Temperature \(Int(value.current.temperature))°"
+                    infoWindow.imageWeather.getWeatherImage(id: weatherImage)
+                    mapView.selectedMarker = self.myMarker
+                    self.infoMarkerWindow = infoWindow
                 }
+                self.realmDateBase.getDataBase(value: value)
             case .failure(let error):
                 print(error)
                 }
             }
         }
+    
+   func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        infoMarkerWindow
     }
+    
+}
 
