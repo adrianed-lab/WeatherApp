@@ -8,6 +8,9 @@
 import Foundation
 
 struct Constants {
+    static var keyState = "StateApp"
+    
+    static var buttonState = "ButtonState"
 
     static var baseURL = "https://api.openweathermap.org/"
     
