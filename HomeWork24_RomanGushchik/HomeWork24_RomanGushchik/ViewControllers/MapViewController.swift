@@ -10,14 +10,12 @@ import GoogleMaps
 
 class MapViewController: UIViewController {
     @IBOutlet weak var conteinerForMapView: UIView!
-    @IBOutlet weak var weatherView: UIView!
-    @IBOutlet weak var weatherImageIcon: UIImageView!
-    @IBOutlet weak var temperature: UILabel!
-    @IBOutlet weak var feelsLike: UILabel!
-    @IBOutlet weak var weatherDiscription: UILabel!
+    var myMarker = GMSMarker()
     static let key = "MapViewController"
     var apiProvider: RestAPIProviderProtocol!
     var realmDateBase: RealmDataBaseProtocol!
+    var currentWeather: Current!
+    var infoMarkerWindow: CustomInfoWindow!
 
 
     override func viewDidLoad() {
