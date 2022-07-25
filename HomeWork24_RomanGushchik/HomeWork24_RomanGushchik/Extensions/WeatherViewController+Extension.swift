@@ -23,14 +23,14 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
         let cell = tableView.dequeueReusableCell(withIdentifier: HourlyTableViewCell.key, for: indexPath) as! HourlyTableViewCell
-            DispatchQueue.global(qos: .userInteractive).async {
+            DispatchQueue.main.async {
                 cell.configure(with: self.hourlyModels)
             }
             return cell
         }
         else {
         let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.key, for: indexPath) as! DailyTableViewCell
-            DispatchQueue.global(qos: .userInteractive).async {
+            DispatchQueue.main.async {
                 cell.configure(model: self.dailyWeather[indexPath.row], textForDay: indexPath.row == 0 ? "Today" : self.dailyWeather[indexPath.row].dateTime.timeIntervalToStringDate(.shortDate))
             }
             return cell
@@ -69,3 +69,10 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
             return header
     }
 }
+
+enum EditState {
+    case currentLocationWeather
+    case cityWeather
+}
+
+
