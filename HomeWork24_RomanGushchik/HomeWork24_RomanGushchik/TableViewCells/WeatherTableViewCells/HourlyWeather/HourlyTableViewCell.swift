@@ -33,8 +33,10 @@ class HourlyTableViewCell: UITableViewCell {
 
     }
     func configure(with models: [Hourly]) {
-        self.hourlyModels = models
-        self.myCollectionView.reloadData()
+        DispatchQueue.main.async {
+            self.hourlyModels = models
+            self.myCollectionView.reloadData()
+        }
     }
 }
 
