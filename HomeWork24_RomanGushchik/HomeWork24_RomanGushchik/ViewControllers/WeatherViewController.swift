@@ -194,7 +194,6 @@
 extension WeatherViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if manager.authorizationStatus == .authorizedAlways || manager.authorizationStatus == .authorizedWhenInUse {
-            UserDefaults.standard.set(false, forKey: Constants.buttonState)
         }
     }
     
