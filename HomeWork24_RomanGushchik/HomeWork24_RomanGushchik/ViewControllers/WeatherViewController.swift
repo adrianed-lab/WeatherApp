@@ -54,14 +54,16 @@
         myTableView.register(UINib(nibName: "DailyTableViewCell", bundle: nil), forCellReuseIdentifier: DailyTableViewCell.key)
         myTableView.backgroundColor = .clear
             guard let cityName = UserDefaults.standard.string(forKey: Constants.keyState) else {return}
-                        if UserDefaults.standard.bool(forKey: Constants.buttonState) {
-                            DispatchQueue.main.async {
-                                self.getWeatherByCityName(cityName: cityName)
-                            }
-                        } else {
-                            editState = .currentLocationWeather
-                            coreManager.startUpdatingLocation()
-                        }
+                if UserDefaults.standard.bool(forKey: Constants.buttonState) {
+                    DispatchQueue.main.async {
+                        self.getWeatherByCityName(cityName: cityName)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.editState = .currentLocationWeather
+                        self.coreManager.startUpdatingLocation()
+                    }
+                }
         }
         
     fileprivate func getCoordinateByCityName() {
@@ -115,8 +117,8 @@
                 DispatchQueue.main.async {
                     guard let mainWeather = self.currentWeather.weather.first?.main else {return}
                     let backgroundImage = self.getImageForBackground(mainWeather: mainWeather)
-                    self.myTableView.reloadData()
                     self.myTableView.tableHeaderView = self.createTableHeader()
+                    self.myTableView.reloadData()
                     self.imageWeatherView.contentMode = .scaleAspectFill
                     self.imageWeatherView.image = backgroundImage
                 }
@@ -192,7 +194,6 @@
 extension WeatherViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if manager.authorizationStatus == .authorizedAlways || manager.authorizationStatus == .authorizedWhenInUse {
-            editState = .currentLocationWeather
             UserDefaults.standard.set(false, forKey: Constants.buttonState)
         }
     }
