@@ -23,7 +23,7 @@ class MapViewController: UIViewController {
         apiProvider = AlamofireAPIProvider()
         realmDateBase = RealmDataBase()
         view.layoutSubviews()
-        title = "Map"
+        title = "Map".localizable(key: "MapTabBarItem")
         let camera = GMSCameraPosition.camera(withLatitude: 54.029, longitude: 27.597, zoom: 6.0)
         let mapView = GMSMapView.map(withFrame: conteinerForMapView.frame, camera: camera)
         conteinerForMapView.addSubview(mapView)

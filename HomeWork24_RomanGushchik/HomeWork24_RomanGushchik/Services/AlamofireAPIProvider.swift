@@ -17,7 +17,7 @@ protocol RestAPIProviderProtocol {
 class AlamofireAPIProvider: RestAPIProviderProtocol {
     
     func getCoordinateByCityName(cityName: String, completion: @escaping (Result<[CityCoordinate], Error>) -> Void) {
-            let parameters = addParametrs(queryItems: ["q": cityName])
+        let parameters = addParametrs(queryItems: ["q": cityName, "limit" : "1"])
             AF.request(Constants.getCodingURL, method: .get, parameters: parameters).responseDecodable(of: [CityCoordinate].self) { response in
                 switch response.result {
                 case .success(let result):
@@ -30,7 +30,7 @@ class AlamofireAPIProvider: RestAPIProviderProtocol {
         }
     
     func getWeatherByCityCoordinate(latitude: Double, longitude: Double, completion: @escaping (Result<CurrentWeather, Error>) -> Void) {
-        let parameters = addParametrs(queryItems: ["lat": latitude.description, "lon": longitude.description, "exclude": "minutely, alerts", "units":"metric"])
+        let parameters = addParametrs(queryItems: ["lat": latitude.description, "lon": longitude.description, "exclude": "minutely, alerts", "units":"metric", "lang":"".localizable(key: "Lang")])
         AF.request(Constants.weatherURL, method: .get, parameters: parameters).responseDecodable(of: CurrentWeather.self) {
             response in
             switch response.result {

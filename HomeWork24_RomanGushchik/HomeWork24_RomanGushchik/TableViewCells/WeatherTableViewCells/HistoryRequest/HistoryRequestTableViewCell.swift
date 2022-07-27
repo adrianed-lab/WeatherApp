@@ -28,12 +28,11 @@ class HistoryRequestTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func configure(model: CurrentPlaceData) {
-        self.latitudeLabel.text = "Lat: \(model.lat)"
-        self.longitudeLabel.text = "Lon: \(model.lon)"
+        self.latitudeLabel.text = "Lat:".localizable(key: "Latitude") + "\(model.lat)"
+        self.longitudeLabel.text = "Lon:".localizable(key: "Longitude") + "\(model.lon)"
         self.weatherLabel.text = model.currentWeather.weatherDiscription
-        self.temperatureLabel.text = "Temp: \(model.currentWeather.temp)"
-        self.feelsLikeLabel.text = "FeelsLike: \(model.currentWeather.feelsLike)"
+        self.temperatureLabel.text = "Temp:".localizable(key: "Temp") + "\(model.currentWeather.temp)"
+        self.feelsLikeLabel.text = "FeelsLike:".localizable(key: "FeelsLike") + "\(model.currentWeather.feelsLike)"
         self.dateTimeLabel.text = model.currentWeather.dateTime.timeIntervalToStringDate(.fullDate)
     }
-    
 }

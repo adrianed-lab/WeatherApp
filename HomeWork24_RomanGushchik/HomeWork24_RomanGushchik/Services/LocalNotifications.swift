@@ -32,8 +32,8 @@ class UserNotification: NotificationProtocol {
             if settings.authorizationStatus == .authorized {
                 if mainWeather == .rain || mainWeather == .thunderstorm || mainWeather == .snow {
                 let content = UNMutableNotificationContent()
-                content.title = "Weather Local Notification"
-                content.body = "Check weather"
+                    content.title = "Weather Local Notification".localizable(key: "WeatherNotification")
+                    content.body = "Check weather".localizable(key: "CheckWeather")
                 content.sound = UNNotificationSound.default
                 let identifier = "Check notification"
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1800, repeats: false)

@@ -18,7 +18,7 @@ class HistoryRequestViewController: UIViewController {
     static let key = "DataBaseViewController"
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "HistoryRequest"
+        title = "History Request".localizable(key: "HistoryTabBarItem")
         historyRequestTableView.register(UINib(nibName: "HistoryRequestTableViewCell", bundle: nil), forCellReuseIdentifier: HistoryRequestTableViewCell.key)
         realmDataBase = RealmDataBase()
         collectionCurrentPlace = realmDataBase.getObject(nameObject: CurrentPlaceData.self)

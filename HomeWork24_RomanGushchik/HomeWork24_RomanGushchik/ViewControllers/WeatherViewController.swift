@@ -42,7 +42,7 @@
         
         override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Weather"
+        title = "Weather".localizable(key: "TitleWeather")
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.red]
         apiProvider = AlamofireAPIProvider()
         realmDataBase = RealmDataBase()
@@ -67,13 +67,13 @@
         }
         
     fileprivate func getCoordinateByCityName() {
-        let alertMessage = UIAlertController(title: "Get city weather.", message: "Please, enter city name!", preferredStyle: .alert)
+        let alertMessage = UIAlertController(title: "Get city weather.".localizable(key: "GetCityWeather"), message: "Please, enter city name!".localizable(key: "EnterCityName"), preferredStyle: .alert)
         alertMessage.addTextField { [weak self] cityNameTextField in
             guard let self = self else {return}
-            cityNameTextField.placeholder = "City name"
+            cityNameTextField.placeholder = "City name".localizable(key: "CityNamePlaceholder")
             self.cityName = cityNameTextField
         }
-        let cancelButton = UIAlertAction(title: "Cancel", style: .destructive)
+        let cancelButton = UIAlertAction(title: "Cancel".localizable(key: "CancelButton"), style: .destructive)
         let okButton = UIAlertAction(title: "Ok", style: .cancel) { [weak self] _ in
             guard let self = self, let cityName = self.cityName.text else {return}
             self.getWeatherByCityName(cityName: cityName)
@@ -84,7 +84,8 @@
         }
         
         func getWeatherByCityName(cityName: String) {
-            self.apiProvider.getCoordinateByCityName(cityName: cityName) { result in
+            self.apiProvider.getCoordinateByCityName(cityName: cityName) { [weak self] result in
+                guard let self = self else {return}
                 switch result {
                 case .success(let value):
                     DispatchQueue.main.async {
@@ -94,7 +95,7 @@
                         }
                     }
                 case .failure:
-                    let alertErrorMessage = UIAlertController(title: "Warning!", message: "Enter existing city!", preferredStyle: .alert)
+                    let alertErrorMessage = UIAlertController(title: "Warning!".localizable(key: "WarningAlert"), message: "Enter existing city!".localizable(key: "WarningAlertMessage"), preferredStyle: .alert)
                     let okButton = UIAlertAction(title: "Ok", style: .cancel)
                     alertErrorMessage.addAction(okButton)
                     self.present(alertErrorMessage, animated: true)
@@ -128,7 +129,7 @@
                 self.coreManager.stopUpdatingLocation()
                
               case .failure:
-                let alertErrorMessage = UIAlertController(title: "Warning!", message: "Data not received!", preferredStyle: .alert)
+                let alertErrorMessage = UIAlertController(title: "Warning!".localizable(key: "WarningAlert"), message: "Data not received!".localizable(key: "WarningMessage"), preferredStyle: .alert)
                 let okButton = UIAlertAction(title: "Ok", style: .cancel)
                 alertErrorMessage.addAction(okButton)
                 self.present(alertErrorMessage, animated: true)
@@ -166,7 +167,7 @@
             hightAndLowTemp.font = UIFont(name: "Thonburi-Light", size: 20)
             currentLocationLabel.textAlignment = .center
             currentLocationLabel.textColor = .white
-            currentLocationLabel.font = UIFont(name: "Thonburi-Light", size: 32)
+            currentLocationLabel.font = UIFont(name: "Thonburi-Light", size: editState == .currentLocationWeather ? 26 : 32)
             tempLabel.textAlignment = .center
             tempLabel.textColor = .white
             tempLabel.font = UIFont(name: "Thonburi", size: 32)
@@ -179,12 +180,12 @@
             tableHeader.addSubview(hightAndLowTemp)
             tempLabel.text = "\(Int(currentWeather.temperature))°"
             guard let maxTemp = dailyWeather.first?.temperature.max , let minTemp = dailyWeather.first?.temperature.min else {return UIView()}
-            hightAndLowTemp.text = "H:\(Int(maxTemp))° L:\(Int(minTemp))°"
+            hightAndLowTemp.text = "H:".localizable(key: "HightTemp") + "\(Int(maxTemp))° " + "L:".localizable(key: "LowTemp") + "\(Int(minTemp))°"
             
             guard let weather = currentWeather.weather.first?.weatherDescription else {
                 return UIView()
             }
-            currentLocationLabel.text = editState == .currentLocationWeather ? "Current Location" : currentLocation.first?.cityName
+            currentLocationLabel.text = editState == .currentLocationWeather ? "Current Location".localizable(key: "CurrentLocationWeather") : currentLocation.first?.cityName
             weatherDiscription.text = weather.capitalized
 
             return tableHeader
@@ -220,7 +221,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
                 }
                 self.coreManager.stopUpdatingLocation()
               case .failure:
-                let alertErrorMessage = UIAlertController(title: "Warning!", message: "Data not received!", preferredStyle: .alert)
+                let alertErrorMessage = UIAlertController(title: "Warning!".localizable(key: "WarningAlert"), message: "Data not received!".localizable(key: "WarningMessage"), preferredStyle: .alert)
                 let okButton = UIAlertAction(title: "Ok", style: .cancel)
                 alertErrorMessage.addAction(okButton)
                 self.present(alertErrorMessage, animated: true)
