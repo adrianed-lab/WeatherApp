@@ -16,7 +16,7 @@ enum DateFormat {
     var formatPattern: String {
         switch self {
         case .shortDate:
-            return "EEEE"
+            return "EEE"
         case .short24HoursTime:
             return "HH:mm"
         case .fullDate:
