@@ -70,6 +70,7 @@
         let alertMessage = UIAlertController(title: "Get city weather.".localizable(key: "GetCityWeather"), message: "Please, enter city name!".localizable(key: "EnterCityName"), preferredStyle: .alert)
         alertMessage.addTextField { [weak self] cityNameTextField in
             guard let self = self else {return}
+            cityNameTextField.delegate = self
             cityNameTextField.placeholder = "City name".localizable(key: "CityNamePlaceholder")
             self.cityName = cityNameTextField
         }
@@ -112,7 +113,7 @@
                     self.currentWeather = value.current
                     self.hourlyModels = value.hourlyWeather
                 }
-                self.realmDataBase.getDataBase(value: value)
+                self.realmDataBase.getDataBase(value: value, state: "Current".localizable(key: "Current"))
                 self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather)
                 
                 DispatchQueue.main.async {
@@ -180,7 +181,7 @@
             tableHeader.addSubview(hightAndLowTemp)
             tempLabel.text = "\(Int(currentWeather.temperature))°"
             guard let maxTemp = dailyWeather.first?.temperature.max , let minTemp = dailyWeather.first?.temperature.min else {return UIView()}
-            hightAndLowTemp.text = "H:".localizable(key: "HightTemp") + "\(Int(maxTemp))° " + "L:".localizable(key: "LowTemp") + "\(Int(minTemp))°"
+            hightAndLowTemp.text = String(format: NSLocalizedString("HighLowTemp", comment: ""), Int(maxTemp), Int(minTemp))
             
             guard let weather = currentWeather.weather.first?.weatherDescription else {
                 return UIView()
@@ -195,6 +196,7 @@
 extension WeatherViewController: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         if manager.authorizationStatus == .authorizedAlways || manager.authorizationStatus == .authorizedWhenInUse {
+            UserDefaults.standard.set(false, forKey: Constants.buttonState)
         }
     }
     
@@ -209,7 +211,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
                     self.currentWeather = value.current
                     self.hourlyModels = value.hourlyWeather
                 }
-                self.realmDataBase.getDataBase(value: value)
+                self.realmDataBase.getDataBase(value: value, state: "Current".localizable(key: "Current"))
                 self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather)
                 guard let mainWeather = self.currentWeather.weather.first?.main else {return}
                 let backgroundImage = self.getImageForBackground(mainWeather: mainWeather)
