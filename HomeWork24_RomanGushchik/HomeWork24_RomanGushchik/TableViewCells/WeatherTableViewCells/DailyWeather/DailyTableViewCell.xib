@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jfr-oV-ufh">
-                        <rect key="frame" x="312" y="11" width="66" height="180"/>
+                        <rect key="frame" x="322" y="11" width="66" height="180"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="66" id="dbQ-He-4db"/>
                         </constraints>
@@ -56,7 +56,7 @@
                     <constraint firstAttribute="bottomMargin" secondItem="SMj-jp-Qrh" secondAttribute="bottom" id="RCb-p3-omN"/>
                     <constraint firstItem="ohK-py-DdQ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="i6z-yI-JeQ"/>
                     <constraint firstItem="jfr-oV-ufh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="jwP-6d-jnZ"/>
-                    <constraint firstItem="Vu7-zZ-zVx" firstAttribute="leading" secondItem="jfr-oV-ufh" secondAttribute="trailing" constant="10" id="pYx-uk-ajA"/>
+                    <constraint firstItem="Vu7-zZ-zVx" firstAttribute="leading" secondItem="jfr-oV-ufh" secondAttribute="trailing" id="pYx-uk-ajA"/>
                     <constraint firstItem="Vu7-zZ-zVx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="uF9-B0-TOZ"/>
                     <constraint firstItem="SMj-jp-Qrh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="vqb-Xt-CGB"/>
                     <constraint firstItem="ohK-py-DdQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="x5P-rG-MMx"/>

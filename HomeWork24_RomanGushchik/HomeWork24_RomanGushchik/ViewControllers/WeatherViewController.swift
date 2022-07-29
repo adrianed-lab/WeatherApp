@@ -42,7 +42,7 @@
         
         override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Weather".localizable(key: "TitleWeather")
+        title = "TitleWeather".localizable()
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.red]
         apiProvider = AlamofireAPIProvider()
         realmDataBase = RealmDataBase()
@@ -67,14 +67,14 @@
         }
         
     fileprivate func getCoordinateByCityName() {
-        let alertMessage = UIAlertController(title: "Get city weather.".localizable(key: "GetCityWeather"), message: "Please, enter city name!".localizable(key: "EnterCityName"), preferredStyle: .alert)
+        let alertMessage = UIAlertController(title: "GetCityWeather".localizable(), message: "EnterCityName".localizable(), preferredStyle: .alert)
         alertMessage.addTextField { [weak self] cityNameTextField in
             guard let self = self else {return}
             cityNameTextField.delegate = self
-            cityNameTextField.placeholder = "City name".localizable(key: "CityNamePlaceholder")
+            cityNameTextField.placeholder = "CityNamePlaceholder".localizable()
             self.cityName = cityNameTextField
         }
-        let cancelButton = UIAlertAction(title: "Cancel".localizable(key: "CancelButton"), style: .destructive)
+        let cancelButton = UIAlertAction(title: "CancelButton".localizable(), style: .destructive)
         let okButton = UIAlertAction(title: "Ok", style: .cancel) { [weak self] _ in
             guard let self = self, let cityName = self.cityName.text else {return}
             self.getWeatherByCityName(cityName: cityName)
@@ -96,7 +96,7 @@
                         }
                     }
                 case .failure:
-                    let alertErrorMessage = UIAlertController(title: "Warning!".localizable(key: "WarningAlert"), message: "Enter existing city!".localizable(key: "WarningAlertMessage"), preferredStyle: .alert)
+                    let alertErrorMessage = UIAlertController(title: "WarningAlert".localizable(), message: "WarningAlertMessage".localizable(), preferredStyle: .alert)
                     let okButton = UIAlertAction(title: "Ok", style: .cancel)
                     alertErrorMessage.addAction(okButton)
                     self.present(alertErrorMessage, animated: true)
@@ -113,7 +113,7 @@
                     self.currentWeather = value.current
                     self.hourlyModels = value.hourlyWeather
                 }
-                self.realmDataBase.getDataBase(value: value, state: "Current".localizable(key: "Current"))
+                self.realmDataBase.getDataBase(value: value, state: true)
                 self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather)
                 
                 DispatchQueue.main.async {
@@ -130,7 +130,7 @@
                 self.coreManager.stopUpdatingLocation()
                
               case .failure:
-                let alertErrorMessage = UIAlertController(title: "Warning!".localizable(key: "WarningAlert"), message: "Data not received!".localizable(key: "WarningMessage"), preferredStyle: .alert)
+                let alertErrorMessage = UIAlertController(title: "WarningAlert".localizable(), message: "WarningMessage".localizable(), preferredStyle: .alert)
                 let okButton = UIAlertAction(title: "Ok", style: .cancel)
                 alertErrorMessage.addAction(okButton)
                 self.present(alertErrorMessage, animated: true)
@@ -186,7 +186,7 @@
             guard let weather = currentWeather.weather.first?.weatherDescription else {
                 return UIView()
             }
-            currentLocationLabel.text = editState == .currentLocationWeather ? "Current Location".localizable(key: "CurrentLocationWeather") : currentLocation.first?.cityName
+            currentLocationLabel.text = editState == .currentLocationWeather ? "CurrentLocationWeather".localizable() : currentLocation.first?.cityName
             weatherDiscription.text = weather.capitalized
 
             return tableHeader
@@ -211,7 +211,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
                     self.currentWeather = value.current
                     self.hourlyModels = value.hourlyWeather
                 }
-                self.realmDataBase.getDataBase(value: value, state: "Current".localizable(key: "Current"))
+                self.realmDataBase.getDataBase(value: value, state: true)
                 self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather)
                 guard let mainWeather = self.currentWeather.weather.first?.main else {return}
                 let backgroundImage = self.getImageForBackground(mainWeather: mainWeather)
@@ -223,7 +223,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
                 }
                 self.coreManager.stopUpdatingLocation()
               case .failure:
-                let alertErrorMessage = UIAlertController(title: "Warning!".localizable(key: "WarningAlert"), message: "Data not received!".localizable(key: "WarningMessage"), preferredStyle: .alert)
+                let alertErrorMessage = UIAlertController(title: "WarningAlert".localizable(), message: "WarningMessage".localizable(), preferredStyle: .alert)
                 let okButton = UIAlertAction(title: "Ok", style: .cancel)
                 alertErrorMessage.addAction(okButton)
                 self.present(alertErrorMessage, animated: true)

@@ -35,6 +35,6 @@ class HistoryRequestTableViewCell: UITableViewCell {
         self.temperatureLabel.text = String(format: NSLocalizedString("Temp", comment: ""), Int(model.currentWeather.temp))
         self.feelsLikeLabel.text = String(format: NSLocalizedString("FeelsLike", comment: ""), Int(model.currentWeather.feelsLike))
         self.dateTimeLabel.text = model.currentWeather.dateTime.timeIntervalToStringDate(.fullDate)
-        self.flagState.text = String(format: NSLocalizedString("FlagState", comment: ""), model.requestFlag)
+        self.flagState.text = "\(model.requestFlag)"
     }
 }
