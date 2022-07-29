@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension String {
-    func localizable(key: String) -> String {
-        NSLocalizedString(key, tableName: "", bundle: .main, value: self, comment: "")
+    func localizable() -> String {
+        NSLocalizedString(self, tableName: "", bundle: .main, value: self, comment: "")
     }
 }

@@ -22,7 +22,7 @@ extension HourlyTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         
         guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "HourlyCollectionViewCell", for: indexPath) as? HourlyCollectionViewCell else {return UICollectionViewCell()}
         DispatchQueue.main.async {
-            cell.configure(with: self.hourlyModels[indexPath.row], textForHour: indexPath.row == 0 ? "Now".localizable(key: "Now") : self.hourlyModels[indexPath.row].dateTime.timeIntervalToStringDate(.short24HoursTime))
+            cell.configure(with: self.hourlyModels[indexPath.row], textForHour: indexPath.row == 0 ? "Now".localizable() : self.hourlyModels[indexPath.row].dateTime.timeIntervalToStringDate(.short24HoursTime))
         }
         return cell
     }

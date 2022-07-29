@@ -29,7 +29,7 @@ extension MapViewController: GMSMapViewDelegate {
                     mapView.selectedMarker = self.myMarker
                     self.infoMarkerWindow = infoWindow
                 }
-                self.realmDateBase.getDataBase(value: value, state: "Map".localizable(key: "Map"))
+                self.realmDateBase.getDataBase(value: value, state: false)
             case .failure(let error):
                 print(error)
                 }
