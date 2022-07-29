@@ -10,12 +10,12 @@ import RealmSwift
 import UIKit
 
 protocol RealmDataBaseProtocol {
-    func getDataBase(value: CurrentWeather, state: String)
+    func getDataBase(value: CurrentWeather, state: Bool)
     func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData>
 }
 
 class RealmDataBase: RealmDataBaseProtocol {
-    let config = Realm.Configuration(schemaVersion: 2)
+    let config = Realm.Configuration(schemaVersion: 3)
     
 
     func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData> {
@@ -25,7 +25,7 @@ class RealmDataBase: RealmDataBaseProtocol {
         return currentPlaceData
     }
     
-    func getDataBase(value: CurrentWeather, state: String) {
+    func getDataBase(value: CurrentWeather, state: Bool) {
             guard let weather = value.current.weather.first?.weatherDescription else {return}
             let date = Date()
             Realm.Configuration.defaultConfiguration = config
