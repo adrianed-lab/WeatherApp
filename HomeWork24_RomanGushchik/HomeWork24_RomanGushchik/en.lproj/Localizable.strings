@@ -15,8 +15,6 @@
 "WarningAlert" = "Warning!";
 "WarningAlertMessage" = "Enter existing city!";
 "WarningMessage" = "Data not received!";
-"WeatherTabBarItem" = "Weather";
-"MapTabBarItem" = "Map";
 "HistoryTabBarItem" = "History Request";
 "WeatherNotification" = "Weather Local Notification";
 "CheckWeather" = "Check Weather";
@@ -24,6 +22,4 @@
 "Longitude" = "Lon: %li";
 "Temp" = "Temp: %li°";
 "FeelsLike" = "FeelsLike: %li°";
-"FlagState" = "Flag state: %@";
-"Current" = "Current";
 "Map" = "Map";

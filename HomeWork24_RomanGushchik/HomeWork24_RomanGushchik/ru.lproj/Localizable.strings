@@ -15,8 +15,6 @@
 "WarningAlert" = "Внимание!";
 "WarningAlertMessage" = "Введите существующий город!";
 "WarningMessage" = "Данные не получены!";
-"WeatherTabBarItem" = "Погода";
-"MapTabBarItem" = "Карта";
 "HistoryTabBarItem" = "История запросов";
 "WeatherNotification" = "Оповещение о погоде";
 "CheckWeather" = "Проверьте погоду";
@@ -24,6 +22,4 @@
 "Longitude" = "Долгота: %li";
 "Temp" = "Темп: %li°";
 "FeelsLike" = "Ощущается как: %li°";
-"FlagState" = "Запрос: %@";
-"Current" = "Текущий";
 "Map" = "Карта";
