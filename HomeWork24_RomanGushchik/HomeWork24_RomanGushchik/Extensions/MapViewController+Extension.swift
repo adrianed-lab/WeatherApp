@@ -19,10 +19,9 @@ extension MapViewController: GMSMapViewDelegate {
             switch result {
                 case .success(let value):
                 DispatchQueue.main.async {
-                    guard let infoWindow = Bundle.main.loadNibNamed("InfoWindow", owner: self)?.first as? CustomInfoWindow else {return}
+                    guard let infoWindow = Bundle.main.loadNibNamed("InfoWindow", owner: self)?.first as? CustomInfoWindow, let weatherImage = value.current.weather.first?.icon else {return}
                     infoWindow.frame = CGRect(x: 0, y: 0, width: 250, height: 250)
                     infoWindow.layer.cornerRadius = 25
-                    guard let weatherImage = value.current.weather.first?.icon else {return}
                     infoWindow.speedWindLabel.text = String(format: NSLocalizedString("Wind speed", comment: ""), value.current.windSpeed)
                     infoWindow.currentTempLabel.text = String(format: NSLocalizedString("Temperature", comment: ""), Int(value.current.temperature))
                     infoWindow.imageWeather.getWeatherImage(id: weatherImage)
