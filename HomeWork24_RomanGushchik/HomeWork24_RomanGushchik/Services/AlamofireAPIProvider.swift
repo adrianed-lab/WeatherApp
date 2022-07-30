@@ -17,7 +17,7 @@ protocol RestAPIProviderProtocol {
 class AlamofireAPIProvider: RestAPIProviderProtocol {
     
     func getCoordinateByCityName(cityName: String, completion: @escaping (Result<[CityCoordinate], Error>) -> Void) {
-        let parameters = addParametrs(queryItems: ["q": cityName, "limit" : "1"])
+        let parameters = addParametrs(queryItems: ["q": cityName])
             AF.request(Constants.getCodingURL, method: .get, parameters: parameters).responseDecodable(of: [CityCoordinate].self) { response in
                 switch response.result {
                 case .success(let result):
