@@ -72,7 +72,9 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension WeatherViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard CharacterSet.punctuationCharacters.isDisjoint(with: CharacterSet(charactersIn: string))  else {
+        let mySet = CharacterSet(charactersIn: "-")
+        let newSet = mySet.union(CharacterSet.whitespaces)
+        guard CharacterSet.alphanumerics.union(newSet).isSuperset(of: CharacterSet(charactersIn: string))  else {
             return false
         }
         return true
