@@ -29,11 +29,10 @@ class UserNotification: NotificationProtocol {
             }
         }
         notificationCenter.getNotificationSettings { settings in
-            if settings.authorizationStatus == .authorized {
-                if mainWeather == .rain || mainWeather == .thunderstorm || mainWeather == .snow {
+            if settings.authorizationStatus == .authorized && (mainWeather == .rain || mainWeather == .thunderstorm || mainWeather == .snow) {
                 let content = UNMutableNotificationContent()
-                content.title = "Weather Local Notification"
-                content.body = "Check weather"
+                    content.title = "WeatherNotification".localizable()
+                    content.body = "Check weather".localizable()
                 content.sound = UNNotificationSound.default
                 let identifier = "Check notification"
                 let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1800, repeats: false)
@@ -45,7 +44,6 @@ class UserNotification: NotificationProtocol {
                     }
                 }
             }
-        }
     }
     
     

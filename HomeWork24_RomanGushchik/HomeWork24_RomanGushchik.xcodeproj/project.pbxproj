@@ -15,7 +15,9 @@
 		841E087E28695167003DB2F4 /* MapStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841E087D28695167003DB2F4 /* MapStoryboard.storyboard */; };
 		841E088028696469003DB2F4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E087F28696469003DB2F4 /* TabBarViewController.swift */; };
 		843A3435288B559C006015B8 /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A3434288B559C006015B8 /* CustomInfoWindow.swift */; };
-		843A3437288B5603006015B8 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843A3436288B5603006015B8 /* InfoWindow.xib */; };
+		843A3444289074C8006015B8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 843A3446289074C8006015B8 /* Localizable.strings */; };
+		843A344C28913440006015B8 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843A344B28913440006015B8 /* String+Extension.swift */; };
+		843A344D289141C8006015B8 /* InfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843A344F289141C8006015B8 /* InfoWindow.xib */; };
 		84448D2B2860843F004A82D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448D2A2860843F004A82D6 /* AppDelegate.swift */; };
 		84448D2D2860843F004A82D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448D2C2860843F004A82D6 /* SceneDelegate.swift */; };
 		84448D2F2860843F004A82D6 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84448D2E2860843F004A82D6 /* WeatherViewController.swift */; };
@@ -37,6 +39,7 @@
 		84B02338286D4C790099B7DC /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */; };
 		84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */; };
 		84B0233E286D4CD10099B7DC /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B0233C286D4CD10099B7DC /* DailyTableViewCell.xib */; };
+		84B5D9C92891D881008B7E01 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84B5D9CB2891D881008B7E01 /* InfoPlist.strings */; };
 		84E6055B286F66280055EC1C /* HourlyTableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055A286F66280055EC1C /* HourlyTableViewCell+Extension.swift */; };
 		84E6055D286F66830055EC1C /* WeatherViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */; };
 		84E6055F286F66C70055EC1C /* MapViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */; };
@@ -61,7 +64,12 @@
 		841E087D28695167003DB2F4 /* MapStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryboard.storyboard; sourceTree = "<group>"; };
 		841E087F28696469003DB2F4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		843A3434288B559C006015B8 /* CustomInfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
-		843A3436288B5603006015B8 /* InfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoWindow.xib; sourceTree = "<group>"; };
+		843A3445289074C8006015B8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		843A344728907527006015B8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		843A344828907528006015B8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		843A344928907528006015B8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		843A344B28913440006015B8 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		843A344E289141C8006015B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InfoWindow.xib; sourceTree = "<group>"; };
 		84448D272860843F004A82D6 /* HomeWork24_RomanGushchik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWork24_RomanGushchik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84448D2A2860843F004A82D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84448D2C2860843F004A82D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +92,8 @@
 		84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
 		84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		84B0233C286D4CD10099B7DC /* DailyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
+		84B5D9CA2891D881008B7E01 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		84B5D9CC2891D88C008B7E01 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		84E6055A286F66280055EC1C /* HourlyTableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HourlyTableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeatherViewController+Extension.swift"; sourceTree = "<group>"; };
 		84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+Extension.swift"; sourceTree = "<group>"; };
@@ -137,6 +147,7 @@
 		8417D8B1286DFA6B00B11A56 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				843A344B28913440006015B8 /* String+Extension.swift */,
 				8417D8AF286DF99D00B11A56 /* Int+Extension.swift */,
 				84E6055A286F66280055EC1C /* HourlyTableViewCell+Extension.swift */,
 				84E6055C286F66830055EC1C /* WeatherViewController+Extension.swift */,
@@ -150,7 +161,7 @@
 		841E087C28694E72003DB2F4 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				843A3436288B5603006015B8 /* InfoWindow.xib */,
+				843A344F289141C8006015B8 /* InfoWindow.xib */,
 				84448D302860843F004A82D6 /* Main.storyboard */,
 				841E087D28695167003DB2F4 /* MapStoryboard.storyboard */,
 				84E60569287232330055EC1C /* HistoryRequest.storyboard */,
@@ -189,6 +200,8 @@
 				84448D7528673A1C004A82D6 /* Services */,
 				84448D6C286737C2004A82D6 /* Models */,
 				841E087C28694E72003DB2F4 /* Storyboards */,
+				843A3446289074C8006015B8 /* Localizable.strings */,
+				84B5D9CB2891D881008B7E01 /* InfoPlist.strings */,
 				84448D3328608443004A82D6 /* Assets.xcassets */,
 				84448D3528608443004A82D6 /* LaunchScreen.storyboard */,
 				84448D3828608443004A82D6 /* Info.plist */,
@@ -324,6 +337,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 84448D1E2860843F004A82D6;
 			packageReferences = (
@@ -345,7 +359,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84448D3728608443004A82D6 /* LaunchScreen.storyboard in Resources */,
-				843A3437288B5603006015B8 /* InfoWindow.xib in Resources */,
+				84B5D9C92891D881008B7E01 /* InfoPlist.strings in Resources */,
+				843A344D289141C8006015B8 /* InfoWindow.xib in Resources */,
+				843A3444289074C8006015B8 /* Localizable.strings in Resources */,
 				84B02338286D4C790099B7DC /* HourlyTableViewCell.xib in Resources */,
 				84448D3428608443004A82D6 /* Assets.xcassets in Resources */,
 				844E28CA2875805D000C3510 /* HistoryRequestTableViewCell.xib in Resources */,
@@ -425,6 +441,7 @@
 				84448D4328648918004A82D6 /* HourlyWeather.swift in Sources */,
 				84E6055F286F66C70055EC1C /* MapViewController+Extension.swift in Sources */,
 				84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */,
+				843A344C28913440006015B8 /* String+Extension.swift in Sources */,
 				844E28CD28761E6B000C3510 /* HistoryRequestViewController+Extension.swift in Sources */,
 				84448D2B2860843F004A82D6 /* AppDelegate.swift in Sources */,
 				84E6055B286F66280055EC1C /* HourlyTableViewCell+Extension.swift in Sources */,
@@ -438,10 +455,28 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		843A3446289074C8006015B8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				843A3445289074C8006015B8 /* en */,
+				843A344928907528006015B8 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		843A344F289141C8006015B8 /* InfoWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				843A344E289141C8006015B8 /* Base */,
+			);
+			name = InfoWindow.xib;
+			sourceTree = "<group>";
+		};
 		84448D302860843F004A82D6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				84448D312860843F004A82D6 /* Base */,
+				843A344728907527006015B8 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -450,8 +485,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				84448D3628608443004A82D6 /* Base */,
+				843A344828907528006015B8 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		84B5D9CB2891D881008B7E01 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B5D9CA2891D881008B7E01 /* en */,
+				84B5D9CC2891D88C008B7E01 /* ru */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -461,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -521,6 +567,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

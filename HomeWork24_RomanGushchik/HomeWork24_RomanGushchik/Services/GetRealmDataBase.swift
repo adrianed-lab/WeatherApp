@@ -10,21 +10,26 @@ import RealmSwift
 import UIKit
 
 protocol RealmDataBaseProtocol {
-    func getDataBase(value: CurrentWeather)
+    func getDataBase(value: CurrentWeather, state: Bool)
     func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData>
 }
 
 class RealmDataBase: RealmDataBaseProtocol {
-    let realm = try! Realm()
+    let config = Realm.Configuration(schemaVersion: 3)
     
+
     func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData> {
+        Realm.Configuration.defaultConfiguration = config
+        let realm = try! Realm()
         let currentPlaceData = realm.objects(nameObject).sorted(byKeyPath: "dateTime", ascending: false)
         return currentPlaceData
     }
     
-    func getDataBase(value: CurrentWeather) {
+    func getDataBase(value: CurrentWeather, state: Bool) {
             guard let weather = value.current.weather.first?.weatherDescription else {return}
             let date = Date()
+            Realm.Configuration.defaultConfiguration = config
+            let realm = try! Realm()
             try! realm.write {
                 let realmCurrentWeatherDataBase = CurrentWeatherData()
                 realmCurrentWeatherDataBase.temp = value.current.temperature
@@ -37,6 +42,7 @@ class RealmDataBase: RealmDataBaseProtocol {
                 realmDataBase.lon = value.longitude
                 realmDataBase.dateTime = Int(date.timeIntervalSince1970)
                 realmDataBase.currentWeather = realmCurrentWeatherDataBase
+                realmDataBase.requestFlag = state
                 realm.add(realmDataBase)
                 guard let url = realm.configuration.fileURL else {return}
                 print(url)

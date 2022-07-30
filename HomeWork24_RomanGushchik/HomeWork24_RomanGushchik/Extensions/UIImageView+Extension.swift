@@ -10,9 +10,14 @@ import UIKit
 
 extension UIImageView {
     func getWeatherImage(id: String) {
+        
         guard let imageUrl = URL(string: "\(Constants.baseURLForWeatherImage)\(id)\(Constants.weatherImageIconURLPrefix)") else {return}
-        if let imageData = try? Data(contentsOf: imageUrl) {
-            self.image = UIImage(data: imageData)
+        DispatchQueue.global(qos: .utility).async {
+            if let imageData = try? Data(contentsOf: imageUrl) {
+                DispatchQueue.main.async {
+                    self.image = UIImage(data: imageData)
+                }
+            }
         }
     }
 }

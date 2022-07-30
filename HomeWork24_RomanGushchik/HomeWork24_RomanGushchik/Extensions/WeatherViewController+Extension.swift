@@ -31,7 +31,7 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
         else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DailyTableViewCell.key, for: indexPath) as? DailyTableViewCell else {return UITableViewCell()}
             DispatchQueue.main.async {
-                cell.configure(model: self.dailyWeather[indexPath.row], textForDay: indexPath.row == 0 ? "Today" : self.dailyWeather[indexPath.row].dateTime.timeIntervalToStringDate(.shortDate))
+                cell.configure(model: self.dailyWeather[indexPath.row], textForDay: indexPath.row == 0 ? "Today".localizable() : self.dailyWeather[indexPath.row].dateTime.timeIntervalToStringDate(.shortDate))
             }
             return cell
         }
@@ -65,8 +65,19 @@ extension WeatherViewController: UITableViewDelegate, UITableViewDataSource {
             }
             header.addSubview(label)
             label.textColor = .white
-            label.text = section == 0 ? "HOURLY FORECAST" : "8-DAY FORECAST"
+            label.text = section == 0 ? "HOURLY FORECAST".localizable() : "8-DAY FORECAST".localizable()
             return header
+    }
+}
+
+extension WeatherViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let mySet = CharacterSet(charactersIn: "-")
+        let newSet = mySet.union(CharacterSet.whitespaces)
+        guard CharacterSet.alphanumerics.union(newSet).isSuperset(of: CharacterSet(charactersIn: string))  else {
+            return false
+        }
+        return true
     }
 }
 

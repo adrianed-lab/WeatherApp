@@ -11,7 +11,7 @@ import UIKit
 extension HourlyTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 60, height: 100)
+        return CGSize(width: indexPath.row != 0 ? 60 : 80, height: 100)
    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -22,7 +22,7 @@ extension HourlyTableViewCell: UICollectionViewDelegate, UICollectionViewDataSou
         
         guard let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "HourlyCollectionViewCell", for: indexPath) as? HourlyCollectionViewCell else {return UICollectionViewCell()}
         DispatchQueue.main.async {
-            cell.configure(with: self.hourlyModels[indexPath.row], textForHour: indexPath.row == 0 ? "Now" : self.hourlyModels[indexPath.row].dateTime.timeIntervalToStringDate(.short24HoursTime))
+            cell.configure(with: self.hourlyModels[indexPath.row], textForHour: indexPath.row == 0 ? "Now".localizable() : self.hourlyModels[indexPath.row].dateTime.timeIntervalToStringDate(.short24HoursTime))
         }
         return cell
     }
