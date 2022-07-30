@@ -29,8 +29,7 @@ class UserNotification: NotificationProtocol {
             }
         }
         notificationCenter.getNotificationSettings { settings in
-            if settings.authorizationStatus == .authorized {
-                if mainWeather == .rain || mainWeather == .thunderstorm || mainWeather == .snow {
+            if settings.authorizationStatus == .authorized && mainWeather == .rain || mainWeather == .thunderstorm || mainWeather == .snow {
                 let content = UNMutableNotificationContent()
                     content.title = "WeatherNotification".localizable()
                     content.body = "Check weather".localizable()
@@ -45,7 +44,6 @@ class UserNotification: NotificationProtocol {
                     }
                 }
             }
-        }
     }
     
     
