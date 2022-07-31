@@ -35,6 +35,13 @@
 		844E28CA2875805D000C3510 /* HistoryRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844E28C82875805D000C3510 /* HistoryRequestTableViewCell.xib */; };
 		844E28CD28761E6B000C3510 /* HistoryRequestViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E28CC28761E6B000C3510 /* HistoryRequestViewController+Extension.swift */; };
 		844E28CF287B70BA000C3510 /* LocalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E28CE287B70BA000C3510 /* LocalNotifications.swift */; };
+		8482AF2E28969EC300ED4DA7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482AF2D28969EC300ED4DA7 /* SettingsViewController.swift */; };
+		8482AF302896A0C600ED4DA7 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8482AF2F2896A0C600ED4DA7 /* Settings.storyboard */; };
+		8482AF332896AB1800ED4DA7 /* AdverseWeatherConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482AF312896AB1800ED4DA7 /* AdverseWeatherConditions.swift */; };
+		8482AF342896AB1800ED4DA7 /* AdverseWeatherConditions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8482AF322896AB1800ED4DA7 /* AdverseWeatherConditions.xib */; };
+		8482AF372896AD0400ED4DA7 /* SettingsViewControllert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482AF362896AD0400ED4DA7 /* SettingsViewControllert+Extension.swift */; };
+		8482AF3B2896B48500ED4DA7 /* HistoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482AF392896B48500ED4DA7 /* HistoryRequest.swift */; };
+		8482AF3C2896B48500ED4DA7 /* HistoryRequest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8482AF3A2896B48500ED4DA7 /* HistoryRequest.xib */; };
 		84B02337286D4C790099B7DC /* HourlyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B02335286D4C790099B7DC /* HourlyTableViewCell.swift */; };
 		84B02338286D4C790099B7DC /* HourlyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */; };
 		84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */; };
@@ -88,6 +95,13 @@
 		844E28C82875805D000C3510 /* HistoryRequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryRequestTableViewCell.xib; sourceTree = "<group>"; };
 		844E28CC28761E6B000C3510 /* HistoryRequestViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HistoryRequestViewController+Extension.swift"; sourceTree = "<group>"; };
 		844E28CE287B70BA000C3510 /* LocalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifications.swift; sourceTree = "<group>"; };
+		8482AF2D28969EC300ED4DA7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		8482AF2F2896A0C600ED4DA7 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = HomeWork24_RomanGushchik/Storyboards/Settings.storyboard; sourceTree = SOURCE_ROOT; };
+		8482AF312896AB1800ED4DA7 /* AdverseWeatherConditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdverseWeatherConditions.swift; sourceTree = "<group>"; };
+		8482AF322896AB1800ED4DA7 /* AdverseWeatherConditions.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdverseWeatherConditions.xib; sourceTree = "<group>"; };
+		8482AF362896AD0400ED4DA7 /* SettingsViewControllert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsViewControllert+Extension.swift"; sourceTree = "<group>"; };
+		8482AF392896B48500ED4DA7 /* HistoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRequest.swift; sourceTree = "<group>"; };
+		8482AF3A2896B48500ED4DA7 /* HistoryRequest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryRequest.xib; sourceTree = "<group>"; };
 		84B02335286D4C790099B7DC /* HourlyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyTableViewCell.swift; sourceTree = "<group>"; };
 		84B02336286D4C790099B7DC /* HourlyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HourlyTableViewCell.xib; sourceTree = "<group>"; };
 		84B0233B286D4CD10099B7DC /* DailyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
@@ -154,6 +168,7 @@
 				84E6055E286F66C70055EC1C /* MapViewController+Extension.swift */,
 				205072572871CD9000B01E93 /* UIImageView+Extension.swift */,
 				844E28CC28761E6B000C3510 /* HistoryRequestViewController+Extension.swift */,
+				8482AF362896AD0400ED4DA7 /* SettingsViewControllert+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -165,6 +180,7 @@
 				84448D302860843F004A82D6 /* Main.storyboard */,
 				841E087D28695167003DB2F4 /* MapStoryboard.storyboard */,
 				84E60569287232330055EC1C /* HistoryRequest.storyboard */,
+				8482AF2F2896A0C600ED4DA7 /* Settings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -239,6 +255,7 @@
 				84448D2E2860843F004A82D6 /* WeatherViewController.swift */,
 				841E087A28694E30003DB2F4 /* MapViewController.swift */,
 				84E60565287231030055EC1C /* HistoryRequestViewController.swift */,
+				8482AF2D28969EC300ED4DA7 /* SettingsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -246,6 +263,7 @@
 		844E28C628757F80000C3510 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				8482AF352896AB4C00ED4DA7 /* SettingsTableViewCells */,
 				84B02334286D4BDC0099B7DC /* WeatherTableViewCells */,
 			);
 			path = TableViewCells;
@@ -258,6 +276,33 @@
 				844E28C82875805D000C3510 /* HistoryRequestTableViewCell.xib */,
 			);
 			path = HistoryRequest;
+			sourceTree = "<group>";
+		};
+		8482AF352896AB4C00ED4DA7 /* SettingsTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				8482AF382896B03200ED4DA7 /* AdverseWeather */,
+				8482AF3D2896B4A800ED4DA7 /* HistoryRequestSettings */,
+			);
+			path = SettingsTableViewCells;
+			sourceTree = "<group>";
+		};
+		8482AF382896B03200ED4DA7 /* AdverseWeather */ = {
+			isa = PBXGroup;
+			children = (
+				8482AF312896AB1800ED4DA7 /* AdverseWeatherConditions.swift */,
+				8482AF322896AB1800ED4DA7 /* AdverseWeatherConditions.xib */,
+			);
+			path = AdverseWeather;
+			sourceTree = "<group>";
+		};
+		8482AF3D2896B4A800ED4DA7 /* HistoryRequestSettings */ = {
+			isa = PBXGroup;
+			children = (
+				8482AF392896B48500ED4DA7 /* HistoryRequest.swift */,
+				8482AF3A2896B48500ED4DA7 /* HistoryRequest.xib */,
+			);
+			path = HistoryRequestSettings;
 			sourceTree = "<group>";
 		};
 		84B02334286D4BDC0099B7DC /* WeatherTableViewCells */ = {
@@ -358,6 +403,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8482AF342896AB1800ED4DA7 /* AdverseWeatherConditions.xib in Resources */,
 				84448D3728608443004A82D6 /* LaunchScreen.storyboard in Resources */,
 				84B5D9C92891D881008B7E01 /* InfoPlist.strings in Resources */,
 				843A344D289141C8006015B8 /* InfoWindow.xib in Resources */,
@@ -369,6 +415,8 @@
 				8417D8AD286DA5A300B11A56 /* HourlyCollectionViewCell.xib in Resources */,
 				84E6056A287232330055EC1C /* HistoryRequest.storyboard in Resources */,
 				84448D322860843F004A82D6 /* Main.storyboard in Resources */,
+				8482AF3C2896B48500ED4DA7 /* HistoryRequest.xib in Resources */,
+				8482AF302896A0C600ED4DA7 /* Settings.storyboard in Resources */,
 				84B0233E286D4CD10099B7DC /* DailyTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +472,7 @@
 			files = (
 				84448D4128646618004A82D6 /* CityCoordinates.swift in Sources */,
 				84448D4528648EB2004A82D6 /* DailyWeather.swift in Sources */,
+				8482AF3B2896B48500ED4DA7 /* HistoryRequest.swift in Sources */,
 				841E088028696469003DB2F4 /* TabBarViewController.swift in Sources */,
 				84E6056C2873432E0055EC1C /* GetRealmDataBase.swift in Sources */,
 				84E60566287231030055EC1C /* HistoryRequestViewController.swift in Sources */,
@@ -437,14 +486,17 @@
 				843A3435288B559C006015B8 /* CustomInfoWindow.swift in Sources */,
 				844E28C92875805D000C3510 /* HistoryRequestTableViewCell.swift in Sources */,
 				8417D8AC286DA5A300B11A56 /* HourlyCollectionViewCell.swift in Sources */,
+				8482AF332896AB1800ED4DA7 /* AdverseWeatherConditions.swift in Sources */,
 				84E6055D286F66830055EC1C /* WeatherViewController+Extension.swift in Sources */,
 				84448D4328648918004A82D6 /* HourlyWeather.swift in Sources */,
 				84E6055F286F66C70055EC1C /* MapViewController+Extension.swift in Sources */,
 				84B0233D286D4CD10099B7DC /* DailyTableViewCell.swift in Sources */,
 				843A344C28913440006015B8 /* String+Extension.swift in Sources */,
 				844E28CD28761E6B000C3510 /* HistoryRequestViewController+Extension.swift in Sources */,
+				8482AF372896AD0400ED4DA7 /* SettingsViewControllert+Extension.swift in Sources */,
 				84448D2B2860843F004A82D6 /* AppDelegate.swift in Sources */,
 				84E6055B286F66280055EC1C /* HourlyTableViewCell+Extension.swift in Sources */,
+				8482AF2E28969EC300ED4DA7 /* SettingsViewController.swift in Sources */,
 				84448D2D2860843F004A82D6 /* SceneDelegate.swift in Sources */,
 				205072582871CD9000B01E93 /* UIImageView+Extension.swift in Sources */,
 				84B02337286D4C790099B7DC /* HourlyTableViewCell.swift in Sources */,
