@@ -22,3 +22,7 @@ class CurrentWeatherData: Object {
     @objc dynamic var weatherDiscription: String = ""
     @objc dynamic var dateTime: Int = 0
 }
+
+class RealmBadWeather: Object {
+    @objc dynamic var badWeatherState: Int = 0
+}
