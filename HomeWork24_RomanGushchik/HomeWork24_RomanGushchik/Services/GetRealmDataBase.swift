@@ -12,12 +12,32 @@ import UIKit
 protocol RealmDataBaseProtocol {
     func getDataBase(value: CurrentWeather, state: Bool)
     func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData>
+    func getBadWeather(nameObject: RealmBadWeather.Type) -> Results<RealmBadWeather>
+    func setBadWeatherRawValue(rawValue: Int)
 }
 
 class RealmDataBase: RealmDataBaseProtocol {
     let config = Realm.Configuration(schemaVersion: 3)
     
-
+    func setBadWeatherRawValue(rawValue: Int) {
+        Realm.Configuration.defaultConfiguration = config
+        let realm = try! Realm()
+        try! realm.write {
+            let badWeatherRawValue = RealmBadWeather()
+            badWeatherRawValue.badWeatherState = rawValue
+            realm.add(badWeatherRawValue)
+        }
+    }
+    
+    
+    
+    func getBadWeather(nameObject: RealmBadWeather.Type) -> Results<RealmBadWeather> {
+        Realm.Configuration.defaultConfiguration = config
+        let realm = try! Realm()
+        let badWeatherObject = realm.objects(nameObject)
+        return badWeatherObject
+    }
+    
     func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData> {
         Realm.Configuration.defaultConfiguration = config
         let realm = try! Realm()
