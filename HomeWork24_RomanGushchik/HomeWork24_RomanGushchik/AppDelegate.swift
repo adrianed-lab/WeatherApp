@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMaps
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          GMSServices.provideAPIKey(valueApiKey)
         }
         notificationCenter.delegate = self
+        
+        let config = Realm.Configuration(schemaVersion: 3)
+        Realm.Configuration.defaultConfiguration = config
+        
         return true
     }
 
