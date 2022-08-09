@@ -10,7 +10,7 @@ import UIKit
 import UserNotifications
 
 protocol NotificationProtocol {
-    func createLocalNotification(valueWeather: [Hourly], badWeather: BadWeather)
+    func createLocalNotification(valueWeather: [Hourly], badWeatherType: [Main], badWeather: BadWeather)
     func removeNotification(withIdentifiers identifiers: [String])
     func addNotification()
 }
@@ -21,7 +21,7 @@ class UserNotification: NotificationProtocol {
         notificationCenter.removePendingNotificationRequests(withIdentifiers: identifiers)
     }
     
-    func createLocalNotification(valueWeather: [Hourly], badWeather: BadWeather) {
+    func createLocalNotification(valueWeather: [Hourly], badWeatherType: [Main], badWeather: BadWeather) {
         removeNotification(withIdentifiers: ["Check notification"])
         guard let mainWeather = valueWeather.first?.weather.first?.main else {return}
         notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { permissionGranted, error in
@@ -30,7 +30,7 @@ class UserNotification: NotificationProtocol {
             }
         }
         notificationCenter.getNotificationSettings { settings in
-            if settings.authorizationStatus == .authorized && ((badWeather.contains(.rain) && mainWeather == .rain) || (badWeather.contains(.snow) && mainWeather == .snow) || (badWeather.contains(.thunderstorm) && mainWeather == .thunderstorm)) {
+            if settings.authorizationStatus == .authorized && (badWeatherType.contains(mainWeather) && badWeather.contains(mainWeather.badWeather)) {
                     self.addNotification()
                 }
             }
