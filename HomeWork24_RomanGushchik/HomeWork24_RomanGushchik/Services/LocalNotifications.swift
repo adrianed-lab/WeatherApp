@@ -30,17 +30,11 @@ class UserNotification: NotificationProtocol {
             }
         }
         notificationCenter.getNotificationSettings { settings in
-            if settings.authorizationStatus == .authorized {
-                if badWeather.contains(.rain) && mainWeather == .rain {
-                    self.addNotification()
-                } else if badWeather.contains(.snow) && mainWeather == .snow {
-                    self.addNotification()
-                } else if badWeather.contains(.thunderstorm) && mainWeather == .thunderstorm {
+            if settings.authorizationStatus == .authorized && ((badWeather.contains(.rain) && mainWeather == .rain) || (badWeather.contains(.snow) && mainWeather == .snow) || (badWeather.contains(.thunderstorm) && mainWeather == .thunderstorm)) {
                     self.addNotification()
                 }
             }
         }
-    }
     
     func addNotification() {
         let content = UNMutableNotificationContent()
