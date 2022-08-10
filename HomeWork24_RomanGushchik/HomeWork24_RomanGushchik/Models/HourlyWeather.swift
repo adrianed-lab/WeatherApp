@@ -60,6 +60,40 @@ enum Main: String, Codable {
         case ash = "Ash"
         case squall = "Squall"
         case tornado = "Tornado"
+    
+    var badWeather: BadWeather {
+        switch self {
+        case .rain:
+            return .rain
+        case .snow:
+            return .snow
+        case .thunderstorm:
+            return .thunderstorm
+        case .clouds:
+            return .clouds
+        case .clear:
+            return .clear
+        case .mist:
+            return .mist
+        case .smoke:
+            return .smoke
+        case .haze:
+            return .haze
+        case .dust:
+            return .dust
+        case .fog:
+            return .fog
+        case .sand:
+            return .sand
+        case .ash:
+            return .ash
+        case .squall:
+            return .squall
+        case .tornado:
+            return .tornado
+        }
+    }
+    
     }
 
 

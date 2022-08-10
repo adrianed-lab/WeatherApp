@@ -23,3 +23,6 @@
 "Temp" = "Темп: %li°";
 "FeelsLike" = "Ощущается как: %li°";
 "Map" = "Карта";
+"SettingsTabBarItem" = "Настройки";
+"Add Bad Weather Conditions" = "Добавить плохую погоду";
+"Set Bad Weather" = "Установите плохую погоду";

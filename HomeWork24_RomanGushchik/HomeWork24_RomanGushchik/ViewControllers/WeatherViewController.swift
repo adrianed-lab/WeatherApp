@@ -22,7 +22,9 @@
         var currentLocation: [CityCoordinate]!
         var arrayCurrentLocations = [CLLocation]()
         var cityName: UITextField!
-        var isCurrentWeather: Bool!
+        var badWeather: BadWeather = BadWeather()
+        var valueBadWeather: Results<RealmBadWeather>!
+        var badWeatherArray: [Main] = [.rain, .snow, .thunderstorm]
         var editState: EditState = .currentLocationWeather {
             didSet {
                 currentLocationButton.isSelected = editState == .currentLocationWeather
@@ -47,6 +49,7 @@
         apiProvider = AlamofireAPIProvider()
         realmDataBase = RealmDataBase()
         localNotification = UserNotification()
+        valueBadWeather = realmDataBase.getBadWeather(nameObject: RealmBadWeather.self)
         myTableView.delegate = self
         myTableView.dataSource = self
         coreManager.delegate = self
@@ -64,6 +67,12 @@
                         self.coreManager.startUpdatingLocation()
                     }
                 }
+            if let valueBadWeather = valueBadWeather.last?.badWeatherState {
+            badWeather.rawValue = valueBadWeather
+            }
+            else {
+                badWeather.rawValue = 0
+            }
         }
         
     fileprivate func getCoordinateByCityName() {
@@ -114,7 +123,7 @@
                     self.hourlyModels = value.hourlyWeather
                 }
                 self.realmDataBase.getDataBase(value: value, state: true)
-                self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather)
+                self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather, badWeatherType: self.badWeatherArray, badWeather: self.badWeather)
                 
                 DispatchQueue.main.async {
                     guard let mainWeather = self.currentWeather.weather.first?.main else {return}
@@ -212,7 +221,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
                     self.hourlyModels = value.hourlyWeather
                 }
                 self.realmDataBase.getDataBase(value: value, state: true)
-                self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather)
+                self.localNotification.createLocalNotification(valueWeather: value.hourlyWeather, badWeatherType: self.badWeatherArray, badWeather: self.badWeather)
                 guard let mainWeather = self.currentWeather.weather.first?.main else {return}
                 let backgroundImage = self.getImageForBackground(mainWeather: mainWeather)
                 DispatchQueue.main.async {

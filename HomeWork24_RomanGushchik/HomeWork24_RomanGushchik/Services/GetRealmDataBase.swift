@@ -12,15 +12,28 @@ import UIKit
 protocol RealmDataBaseProtocol {
     func getDataBase(value: CurrentWeather, state: Bool)
     func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData>
+    func getBadWeather(nameObject: RealmBadWeather.Type) -> Results<RealmBadWeather>
+    func setBadWeatherRawValue(rawValue: Int)
 }
 
 class RealmDataBase: RealmDataBaseProtocol {
-    let config = Realm.Configuration(schemaVersion: 3)
+    let realm = try! Realm()
     
-
+    func setBadWeatherRawValue(rawValue: Int) {
+        try! realm.write {
+            let badWeatherRawValue = RealmBadWeather()
+            badWeatherRawValue.badWeatherState = rawValue
+            realm.add(badWeatherRawValue)
+        }
+    }
+    
+    func getBadWeather(nameObject: RealmBadWeather.Type) -> Results<RealmBadWeather> {
+        let badWeatherObject = realm.objects(nameObject)
+        return badWeatherObject
+    }
+    
     func getObject(nameObject: CurrentPlaceData.Type) -> Results<CurrentPlaceData> {
-        Realm.Configuration.defaultConfiguration = config
-        let realm = try! Realm()
+        
         let currentPlaceData = realm.objects(nameObject).sorted(byKeyPath: "dateTime", ascending: false)
         return currentPlaceData
     }
@@ -28,8 +41,6 @@ class RealmDataBase: RealmDataBaseProtocol {
     func getDataBase(value: CurrentWeather, state: Bool) {
             guard let weather = value.current.weather.first?.weatherDescription else {return}
             let date = Date()
-            Realm.Configuration.defaultConfiguration = config
-            let realm = try! Realm()
             try! realm.write {
                 let realmCurrentWeatherDataBase = CurrentWeatherData()
                 realmCurrentWeatherDataBase.temp = value.current.temperature

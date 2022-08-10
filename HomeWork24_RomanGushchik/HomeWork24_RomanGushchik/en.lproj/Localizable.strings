@@ -23,3 +23,6 @@
 "Temp" = "Temp: %li°";
 "FeelsLike" = "FeelsLike: %li°";
 "Map" = "Map";
+"SettingsTabBarItem" = "Settings";
+"Add Bad Weather Conditions" = "Add Bad Weather Conditions";
+"Set Bad Weather" = "Set Bad Weather";
